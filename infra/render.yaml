@@ -1,0 +1,46 @@
+services:
+  - type: worker
+    name: social-media-pipeline
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    plan: free
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENCLAW_API_KEY
+        sync: false
+      - key: OPENCLAW_BASE_URL
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: R2_ACCOUNT_ID
+        sync: false
+      - key: R2_ACCESS_KEY_ID
+        sync: false
+      - key: R2_SECRET_ACCESS_KEY
+        sync: false
+      - key: R2_BUCKET_NAME
+        sync: false
+      - key: R2_PUBLIC_URL
+        sync: false
+      - key: BUFFER_ACCESS_TOKEN
+        sync: false
+      - key: BUFFER_PROFILE_X
+        sync: false
+      - key: BUFFER_PROFILE_LINKEDIN
+        sync: false
+      - key: BUFFER_PROFILE_INSTAGRAM
+        sync: false
+      - key: BUFFER_PROFILE_FACEBOOK
+        sync: false
+      - key: TIKTOK_ACCESS_TOKEN
+        sync: false
+      - key: SLACK_WEBHOOK_URL
+        sync: false
+      - key: PIPELINE_CRON_INTERVAL_HOURS
+        value: "1"
+      - key: PIPELINE_MAX_ARTICLES_PER_RUN
+        value: "5"
