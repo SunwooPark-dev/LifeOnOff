@@ -1,0 +1,28 @@
+name: Evening SNS Publisher
+on:
+  schedule:
+    # 한국시간 새벽 4시 (UTC 19:00 - 전날)
+    - cron: '0 19 * * *'
+  workflow_dispatch: # 수동 실행 버튼 추가
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      IFLO_GOOGLE_CREDENTIALS_JSON: ${{ secrets.IFLO_GOOGLE_CREDENTIALS_JSON }}
+      IFLO_OPENROUTER_API_KEY: ${{ secrets.IFLO_OPENROUTER_API_KEY }}
+      IFLO_BUFFER_API_KEY: ${{ secrets.IFLO_BUFFER_API_KEY }}
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      IFLO_SPREADSHEET_ID: "1tepp3i4NbkEccQXYsPkPjrGZnzu1PQS2GtL_NpgWNrA"
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run Evening Publisher
+        run: python cron_evening.py
