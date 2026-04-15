@@ -76,11 +76,16 @@ The title options below are designed to preserve three commercial strengths from
 
 ---
 
-## Current recommendation
-### Best overall
+## Current internal recommendation
+### Internal working lock
 **The High-Agency AI Worker**
 
-### Best mainstream/commercial fallback
+**Subtitle:** *How to Think, Work, and Create with AI Without Losing Your Edge*
+
+This is the locked internal manuscript pair for continuity.
+Commercialization stays deferred.
+
+### Best mainstream/commercial fallback for later comparison
 **Working Smart with AI**
 
 ### Best sharp-thesis option
