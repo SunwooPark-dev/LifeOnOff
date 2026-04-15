@@ -1,4 +1,4 @@
-# Sample Chapter — Planning and Decision-Making with AI
+﻿# Sample Chapter — Planning and Decision-Making with AI
 
 ## Chapter 10. Planning and Decision-Making with AI
 
@@ -6,7 +6,7 @@ Planning used to fail in public.
 
 Research can tell you what is credible. Planning decides what you are willing to commit to.
 
-A team would spend weeks building a plan, circulate a thick document, hold too many meetings, and then discover that the assumptions had gone stale or the tradeoffs had never been made explicit.
+A team could spend weeks building a plan, circulate a polished document, hold too many meetings, and still discover that the assumptions had gone stale or the tradeoffs had never been made explicit.
 
 AI changes the pace, not the burden. It can turn a messy situation into options, categories, scenarios, and recommendation memos in a single sitting. The work can look strategic before the hard choices have been made.
 
@@ -16,7 +16,7 @@ AI is very good at giving shape to ambiguity. That is useful. It is also seducti
 
 That is why planning is one of the most important places to develop high-agency habits.
 
-Used well, AI can help you widen the field of options, identify missing constraints, compare scenarios, stress-test assumptions, and prepare cleaner decisions. Used badly, it can create the appearance of leadership without the burden of judgment. The problem is not that AI makes planning possible. The problem is that it makes plausible planning cheap.
+Used well, AI can help you widen the field of options, identify missing constraints, compare scenarios, stress-test assumptions, and prepare cleaner decisions. Used badly, it can create the appearance of leadership without the burden of judgment.
 
 So the planning spine has to stay explicit: define the problem, the objective, the decision standard, the constraints, and the stakes before you start treating generated options like a real plan.
 
@@ -48,23 +48,11 @@ AI should not be treated as a decision-maker. It should be treated as a planning
 
 That distinction matters.
 
-A planning amplifier can help you:
-- surface more options than you would generate alone,
-- expose assumptions you forgot you were making,
-- organize variables that are currently tangled,
-- compare scenarios against explicit criteria,
-- identify second-order effects,
-- pressure-test arguments,
-- and turn messy notes into decision-ready structure.
+A planning amplifier can help you surface more options than you would generate alone, expose assumptions you forgot you were making, organize variables that are currently tangled, compare scenarios against explicit criteria, identify second-order effects, pressure-test arguments, and turn messy notes into decision-ready structure.
 
-AI is especially useful when the planning problem is underdefined, cross-functional, or cognitively crowded. It helps reduce the friction of getting from chaos to a decision frame.
+It is especially useful when the planning problem is underdefined, cross-functional, or cognitively crowded. It helps reduce the friction of getting from chaos to a decision frame.
 
-But it is much weaker at:
-- knowing which tradeoff your organization can actually tolerate,
-- understanding hidden political or trust dynamics,
-- judging what timing risk feels survivable in context,
-- recognizing which principle should override efficiency,
-- and carrying accountability when a decision goes badly.
+But it is much weaker at knowing which tradeoff your organization can actually tolerate, understanding hidden political or trust dynamics, judging what timing risk feels survivable in context, recognizing which principle should override efficiency, and carrying accountability when a decision goes badly.
 
 In other words, AI can improve preparation for judgment. It cannot replace judgment.
 
@@ -75,7 +63,7 @@ Do not use it to avoid choosing.
 
 ## A high-agency workflow for planning with AI
 
-A strong planning workflow keeps the human in charge of the decision while using AI to improve the quality of preparation. The sequence is simple: frame the problem, review the options, decide, and record the call clearly enough that it does not get reinvented the next day.
+A strong planning workflow keeps the human in charge of the decision while using AI to improve the quality of preparation. The sequence is simple: frame the problem, compare the options, stress-test the favorite, and record the call clearly enough that it does not get reinvented the next day.
 
 ### Step 1. Name the actual decision
 Before asking for options, write the decision in one sentence.
@@ -85,13 +73,6 @@ Not: “Help me think about next quarter.”
 Better: “We need to decide whether to keep the full Q3 launch scope, reduce scope to the highest-value workflow, or move the launch date by six weeks.”
 
 This matters because many planning sessions are really a fog of adjacent questions. AI will happily respond to the fog. High-agency work starts by cutting the fog down to one decision that someone can own.
-
-Useful prompts at this stage include:
-- What decision is implied by this situation?
-- What related questions are important but not the main decision?
-- What would a precise decision statement look like?
-
-The goal is not language polish. The goal is decision clarity.
 
 ### Step 2. Define criteria, constraints, and non-negotiables
 Once the decision is named, define the frame.
@@ -115,18 +96,11 @@ Too many people ask the model for “the best plan” too early. That encourages
 
 Instead, start with expansion.
 
-Ask for:
-- multiple plausible options,
-- the strongest case for each,
-- the hidden cost of each,
-- missing variables,
-- and questions that would change the decision.
+Ask for multiple plausible options, the strongest case for each, the hidden cost of each, missing variables, and the questions that would change the decision.
 
 This is where AI can outperform a rushed human planner. It can quickly produce paths that would otherwise be forgotten, including unattractive but strategically useful ones: delay the launch, narrow the audience, phase the rollout, change success metrics, cut a dependent initiative, or run a pilot instead of a full release.
 
 The point is not to accept every option. The point is to avoid choosing from an artificially narrow set.
-
-This is a good place to keep the allocation boundary visible: delegate option expansion, supervise comparison, and keep the recommendation human-owned.
 
 ### Step 4. Turn options into tradeoff tables
 Once the option set is broad enough, force structure.
@@ -145,8 +119,6 @@ For each option, compare:
 A good planning artifact does not merely say what could happen. It makes visible what has to be true.
 
 ### Step 5. Run a premortem and a dissent pass
-This is one of the highest-leverage uses of AI in planning.
-
 Once an option appears strongest, ask the model to attack it.
 
 Useful prompts include:
@@ -212,34 +184,7 @@ The leader did.
 
 That is high-agency planning with AI.
 
-## Where AI helps most in planning
-
-### 1. Turning ambiguity into a visible decision frame
-When a problem is spread across too many documents, people, and concerns, AI can help turn scattered context into a cleaner planning surface.
-
-### 2. Expanding the option set
-It is especially useful for producing more alternatives than the room would usually generate under time pressure.
-
-### 3. Clarifying tradeoffs
-AI can help structure comparisons so decisions stop hiding behind vague language.
-
-### 4. Stress-testing assumptions
-Premortems, dissent simulations, and second-order questions are all strong use cases.
-
-### 5. Converting raw planning into decision-ready artifacts
-Once the thinking is real, AI can help turn notes into memos, tables, and briefings that make the decision easier to communicate.
-
-## Where leaders get into trouble
-
-The first trap is asking AI for answers before defining the decision.
-
-The second trap is accepting a recommendation without examining what assumptions are carrying it.
-
-The third trap is using scenario language as a substitute for accountability. A document can say “Option B balances speed and risk” while completely avoiding the more serious sentence: “We are choosing a smaller launch because we believe protecting credibility matters more than preserving the appearance of momentum.”
-
-The fourth trap is forgetting that every planning choice redistributes pain. AI can help describe that pain. It cannot decide whose pain is acceptable.
-
-The final trap is overestimating prediction. Planning is partly about foresight, but it is also about preparedness, resilience, and clarity under uncertainty. If AI makes you feel more certain than the evidence warrants, it is not helping your judgment. It is anesthetizing it.
+AI is most useful here when it widens options, stress-tests assumptions, and turns raw notes into decision-ready tables. It is weakest at deciding which pain the team can live with or which tradeoff deserves the final commitment.
 
 ## A practical checklist for planning and decision-making with AI
 

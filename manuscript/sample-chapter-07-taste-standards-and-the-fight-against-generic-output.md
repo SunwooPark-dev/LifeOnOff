@@ -4,7 +4,7 @@
 
 Generic output used to be easier to ignore.
 
-Part II ends here. Chapter 4 defined the work. Chapter 5 built the workflow. Chapter 6 allocated human judgment. Chapter 7 adds the final control layer: standards strong enough to stop plausible but generic output from quietly becoming acceptable.
+Part II ends here: brief, workflow, ownership, then standards strong enough to stop plausible but generic output from quietly becoming acceptable.
 
 AI can produce language, structure, summaries, option sets, and polished first passes quickly enough that many professionals encounter the finished surface before they have defined what quality should be. The result is not always obviously bad. Often it is competent enough to survive, clean enough to circulate, and too weak to carry much weight.
 
@@ -298,6 +298,12 @@ Third, the manager uses AI for option generation rather than immediate acceptanc
 
 Fourth, the manager reviews in passes. Fit: does this help the audience decide? Substance: does it name the real problem? Standard: does it preserve uncertainty honestly? Distinctiveness: where does it sound like generic management prose?
 
+### Before / after excerpt
+
+| Generic output | Owned output |
+| --- | --- |
+| “The initiative is tracking behind plan, but alignment remains strong. Dependencies are being managed and next steps are in progress.” | “The initiative is behind because the decision is still open. This week we narrow scope to protect the date, and I am owning the tradeoff instead of smoothing it over.” |
+
 Fifth, the manager forces a comparison and notices that the most polished version is also the least useful because it smooths out the core tension.
 
 Finally, the manager rewrites the recommendation sentence and opening paragraph in human-owned language.
@@ -376,10 +382,7 @@ That is what taste and standards are for.
 
 They are not ornamental ideas for people in explicitly creative fields. They are operating requirements for anyone who wants to use AI without letting the machine’s default patterns quietly become the house style of their work.
 
-Chapter 4 argued that the problem must be defined before the prompt.  
-Chapter 5 argued that work should be structured as a workflow rather than a trick.  
-Chapter 6 argued that human attention belongs in the right loop.  
-This chapter adds the missing layer: once the system produces output, someone still has to judge what is good enough, what is generic, what is misleadingly polished, and what deserves to remain.
+Chapter 4 defined the work, Chapter 5 built the workflow, and Chapter 6 placed judgment. This chapter adds the final layer: someone still has to judge what is good enough, what is generic, what is misleadingly polished, and what deserves to remain.
 
 That judgment layer is what keeps speed from turning into drift.
 

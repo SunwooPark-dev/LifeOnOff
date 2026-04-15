@@ -4,7 +4,7 @@
 
 Prompting is now mistaken for thinking.
 
-Part II starts upstream. Chapter 4 is about defining the work before you ask for output. Chapter 5 will turn that definition into a repeatable workflow. Chapter 6 will decide where human judgment stays. Chapter 7 will enforce standards strong enough to reject generic output. If this first move is weak, the rest of the system only scales confusion faster.
+Part II starts upstream: define the work before you ask for output. The next chapters turn that definition into workflow, ownership, and standards. If this first move is weak, the rest of the system only scales confusion faster.
 
 This chapter is not about prompt tricks. It is about work definition.
 

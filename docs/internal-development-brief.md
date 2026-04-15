@@ -91,6 +91,12 @@ Use this repository as an internal development kit for:
 - `docs/internal-readthrough-packet.md` — completed internal editorial packet for review
 - `docs/internal-readthrough-summary.md` — synthesized read-through findings and prioritized revision roadmap
 - `docs/internal-title-synopsis-pass-report.md` — tracked title-lock and synopsis-annotation pass evidence
+- `docs/revision-batch-1-report.md` — completed first high-priority revision batch from the internal read-through
+- `docs/focused-reread-packet.md` ? completed narrow verification packet for the revised chapters only
+- `docs/focused-reread-notes-part-ii.md` ? completed Part II follow-up reread findings
+- `docs/focused-reread-notes-part-iii.md` ? completed Part III follow-up reread findings
+- `docs/focused-reread-notes-part-iv.md` ? completed Part IV follow-up reread findings
+- `docs/focused-reread-summary.md` ? focused reread decision showing Revision Batch 1 closed the original P1 issues
 - Completed draft files:
   - `manuscript/sample-chapter-08-writing-with-ai.md`
   - `manuscript/sample-chapter-09-research-with-ai.md`
@@ -105,8 +111,8 @@ Use this repository as an internal development kit for:
   - `manuscript/sample-chapter-14-the-high-agency-future.md`
 
 ## Recommended next internal writing moves
-1. **Execute Revision Batch 1** from the internal read-through summary
-2. Re-run a focused read-through on the revised chapters only
+1. **Choose one smaller cleanup lane next**: cold-reader/plain-language, case-world diversification, or scene-level proof
+2. **Run that narrower pass against the focused reread findings** instead of opening a new full-batch rewrite immediately
 3. Reopen commercialization artifacts only after the manuscript direction feels stable enough to pitch
 
 ## External-track notes for future use

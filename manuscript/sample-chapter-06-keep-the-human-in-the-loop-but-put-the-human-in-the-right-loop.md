@@ -8,13 +8,13 @@ Of course the human should be in the loop.
 
 The real question is: **which loop?**
 
-Chapter 4 defined the work. Chapter 5 built the workflow. Chapter 6 decides where human judgment actually belongs inside that workflow.
+Chapter 6 decides where human judgment actually belongs inside the workflow.
 
 Should the human be involved when the system generates options? When it checks them? When it decides which one becomes real? When it signs off on the consequence? Those are different loops. If you blur them together, you get one of two bad outcomes. Either the human reviews everything equally and becomes a slow bottleneck, or the human stays “involved” in a ceremonial way while the important judgment has already been outsourced.
 
 This chapter is not an argument for more human involvement in general. It is an argument for better task allocation.
 
-AI changes the economics of work by making first-pass output cheap. That creates a management problem at the level of the individual worker and the team: which parts of the job should be delegated fully, which parts should be supervised closely, and which parts should remain unmistakably human-owned?
+AI changes the economics of work by making first-pass output cheap. That creates a management problem at the level of the individual worker and the team: which parts should be delegated, which should be supervised, and which should remain human-owned?
 
 That decision matters because not all work carries the same burden.
 

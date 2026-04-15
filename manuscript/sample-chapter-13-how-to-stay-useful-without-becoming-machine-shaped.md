@@ -119,43 +119,33 @@ That is when the worker who seemed highly modern starts to feel oddly hollow in 
 
 This is why staying useful requires more than adopting tools early. It requires preserving the parts of professional identity that should remain human-shaped even when the workflow becomes heavily machine-assisted.
 
-## A representative professional scenario
+## A week in the life, and the repair
 
-Consider a product operations lead asked to recommend whether a company should redesign its customer onboarding workflow after a month of repeated enterprise escalations.
+Consider a product operations lead asked to recommend whether a company should redesign its customer onboarding workflow after a month of repeated enterprise escalations. The role is messy by nature. It requires writing, research, planning, and coordination all at once.
 
-The role is messy by nature. It requires writing, research, planning, and coordination all at once. There are support logs, sales complaints, implementation notes, customer success observations, and pressure from leadership to “fix the experience quickly.” AI is obviously helpful here. It can cluster complaints, summarize notes, draft decision memos, map options, and turn raw material into something readable.
+On Monday, a new escalation arrives. The lead opens a model before writing the problem in their own words, gets a polished summary, and ends the day with motion but no clear decision.
 
-One version of this lead becomes more machine-shaped.
+On Tuesday, the lead drafts a leadership memo from that summary. The memo is clean, but it mixes diagnosis with workflow design and never names what leadership must choose.
 
-They gather a large amount of internal material, feed it into a model, and quickly produce a polished packet: issue summary, root-cause hypotheses, recommended workflow changes, stakeholder talking points, and a draft leadership memo. The packet is impressive on first read. It is well structured and fast. But it quietly inherits the four failure patterns.
+On Wednesday, leadership asks which escalations came from onboarding design versus staffing gaps. The lead can narrate the packet, but not the provenance. Confidence has been laundered into prose.
 
-The lead acts as a prompt relay, converting organizational mess into polished artifacts.  
-They automate before defining the actual decision, so the memo mixes diagnosis with workflow design and never names what leadership must choose.  
-They launder confidence by presenting synthesized language as if the uncertainties have already been resolved.  
-They disappear stylistically into generic management prose, so the recommendation sounds competent but strangely ownerless.
+On Thursday, sales asks whether the proposed fix will slow down custom implementations. The tradeoff was not surfaced, so the recommendation sounds competent but ownerless.
 
-Then the meeting happens.
+On Friday, customer success asks which assumptions came from direct field interviews and which came from summarized notes. The lead has a document, but not yet a recommendation people can trust.
 
-Leadership asks which escalations were caused by onboarding design versus staffing gaps. The memo cannot answer cleanly. Sales asks whether the proposed fix will slow down custom implementations. The tradeoff was not surfaced. Customer success asks which assumptions came from direct field interviews versus summarized notes. The provenance is blurry. Everyone leaves with a document, but not with a recommendation they can fully trust.
+Now imagine the repaired week.
 
-Now imagine a different version of the same lead using the same class of tools.
+The lead starts Monday with a short problem statement in their own words: we need to decide whether the onboarding issue is mainly a workflow problem, a staffing problem, or a segmentation problem, and leadership needs one recommendation this week.
 
-They still use AI early, but not as a substitute for framing. First they write the problem in their own words: we need to decide whether the onboarding issue is primarily a workflow problem, a staffing problem, or a segmentation problem, and we need a recommendation leadership can actually choose between this week. They identify the standard for the memo: evidence by source, explicit tradeoffs, one clear recommendation, and unresolved assumptions marked as unresolved.
+They also name the non-delegable core up front: the final recommendation sentence, the source check, and the direct conversations that cannot be reduced to summaries.
 
-Then they use AI deliberately.
+AI then helps in the right places. It clusters support logs by failure pattern. It compares what different teams believe the problem is. It generates alternative memo structures and objections. It drafts versions once the frame is clear.
 
-They use it to cluster support logs by failure pattern.  
-They use it to compare what different teams believe the problem is.  
-They use it to generate alternative memo structures and objections.  
-They use it to draft versions of the recommendation once the decision is clearer.
+But the critical human work stays visible. The lead talks directly to the implementation manager who has seen the escalations firsthand. They ask finance whether the staffing option is viable this quarter. They decide which decision leadership is actually being asked to make. They mark what is strong, what is thin, and what remains unresolved. They cut the generic paragraph that says less than it seems to say. They write the recommendation sentence themselves.
 
-But they do the critical human work themselves. They talk directly to the implementation manager who has seen the escalations firsthand. They ask finance whether the staffing option is even viable this quarter. They decide which decision leadership is actually being asked to make. They write the recommendation sentence themselves. They mark which evidence is strong and which is thin. They cut anything that sounds clean but says less than it appears to say.
+By Friday, the output is shorter, clearer, and still owned.
 
-The second lead may not produce more pages.
-
-They produce something more valuable: a recommendation with ownership.
-
-That is what staying useful looks like. Not refusing the tool. Not romanticizing manual effort. Using acceleration where it helps while remaining visibly accountable for meaning, judgment, and standards.
+That is the repair: not less AI, but a stronger boundary around the work that should still belong to the person.
 
 ## Habits that keep leverage from turning into dependency
 

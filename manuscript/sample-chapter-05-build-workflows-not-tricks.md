@@ -6,7 +6,7 @@ A trick works once.
 
 A workflow works on Tuesday, next month, and after the model changes.
 
-Chapter 4 defined the work before generation. Chapter 5 turns that definition into a repeatable operating path. The question here is not how to squeeze one better answer out of a model. It is how to make a recurring task run the same way on Tuesday, next month, and after the model changes.
+Chapter 5 turns the brief into a repeatable operating path. The point is durability, not one better answer.
 
 People love prompt tricks because tricks feel like leverage. A clever instruction can produce a better draft, a sharper summary, or a cleaner structure in one moment. But isolated wins do not create durable capability. They create dependency on whatever happens to work today.
 
@@ -140,6 +140,8 @@ You do not need a giant automation project to begin.
 Start with one recurring task. One. The goal is not to redesign everything at once. The goal is to build a process that survives repetition.
 
 To make the rest of the chapter concrete, keep one recurring task in view: a Friday leadership brief built from scattered project notes, blockers, decisions, and stakeholder concerns.
+
+The same structure also works for a solo contributor. A writer preparing a weekly newsletter can collect source links, ask AI for candidate outlines, review for accuracy and voice, choose the best opening, and keep the final version plus the note that explains why it worked.
 
 ### Step 1. Pick a task that repeats
 
@@ -291,6 +293,9 @@ The same pattern applies to many recurring tasks:
 - a recurring client update.
 
 The details change. The architecture stays the same.
+
+A creator- or individual-contributor version looks similar. A freelance designer may run the same workflow each Friday: gather client notes, flag open approvals, summarize design risks, review tone before sending, and keep a record of what changed so the next update does not start from scratch. The work is smaller in scale than a leadership brief, but the architecture is the same: inputs, transformation, review, decision, and record.
+
 ## Where workflows go wrong
 
 A workflow can still fail, even if it is repeatable.

@@ -45,19 +45,19 @@ Trust matters because it answers a question AI cannot answer on its own: should 
 
 Voice is not just style. In work, voice is the shape of standards in language.
 
-It shows up in what you emphasize, what you refuse to exaggerate, how directly you name tradeoffs, and whether people can tell that a real mind is present. Chapter 8 makes this especially clear: once AI can draft fluently, voice becomes one of the main ways a writer stays recognizable and responsible.
+It shows up in what you emphasize, what you refuse to exaggerate, how directly you name tradeoffs, and whether people can tell that a real mind is present. Chapter 8 makes this especially clear: once AI can draft fluently, voice becomes one of the main ways a writer stays recognizable and responsible. In the two-manager scenario below, voice is the line that says the choice plainly instead of hiding it inside neutral management prose.
 
 ### Taste
 
 Taste is the ability to detect quality beyond rule-following.
 
-It decides what to cut, what to sharpen, what to leave unsaid, and what would embarrass the work if it shipped unchanged. AI can propose many versions. Taste decides which versions are alive. That matters in writing, but it also matters in research, planning, presentations, hiring, design, and operational decisions.
+It decides what to cut, what to sharpen, what to leave unsaid, and what would embarrass the work if it shipped unchanged. AI can propose many versions. Taste decides which versions are alive. That matters in writing, but it also matters in research, planning, presentations, hiring, design, and operational decisions. In the launch-deliberation scenario, taste is what removes the polished paragraph that says little and keeps the sentence that actually changes the decision.
 
 ### Synthesis
 
 Synthesis is the ability to turn fragments into direction.
 
-This is where Chapters 9, 10, and 11 connect most clearly. Research produces facts, but not yet a decision. Planning produces options, but not yet a choice. Coordination produces notes, but not yet shared understanding. Synthesis is the work of bringing those pieces together without distorting them.
+This is where Chapters 9, 10, and 11 connect most clearly. Research produces facts, but not yet a decision. Planning produces options, but not yet a choice. Coordination produces notes, but not yet shared understanding. Synthesis is the work of bringing those pieces together without distorting them. In the same scenario, it is what turns customer feedback, engineering input, and commercial timing into one recommendation instead of three separate summaries.
 
 It is more valuable when AI is cheap because the raw material is more abundant.
 
@@ -65,7 +65,7 @@ It is more valuable when AI is cheap because the raw material is more abundant.
 
 Strategic framing means defining the actual problem before everyone spends time solving the wrong one.
 
-It is the upstream skill beneath good prompting, good planning, and good leadership. When AI can generate motion quickly, framing becomes more important because the cost of moving in the wrong direction falls only for a moment. The cost of acting on the wrong frame still lands in time, trust, money, and morale.
+It is the upstream skill beneath good prompting, good planning, and good leadership. When AI can generate motion quickly, framing becomes more important because the cost of moving in the wrong direction falls only for a moment. The cost of acting on the wrong frame still lands in time, trust, money, and morale. In this chapter's working example, framing is the difference between "Should we delay?" and "What decision are we really making about readiness, risk, and commercial timing?"
 
 ## How the earlier chapters connect
 
@@ -97,7 +97,7 @@ If your value is mostly being a little quicker at work that is becoming easier t
 
 The better response is to move toward the layers of work whose value rises when generated output becomes abundant.
 
-## A representative scenario: same tools, different edge
+## What the same scenario proves
 
 Consider two managers asked to prepare a recommendation about whether to delay a feature launch.
 
@@ -105,17 +105,20 @@ Both have access to the same models. Both can summarize research, draft briefs, 
 
 The first manager uses AI to move quickly. They generate a summary of customer feedback, a list of risks, a leadership memo, and a status update. Everything is clean. The language is polished. The recommendation sounds reasonable. But the document stays at the surface. It does not separate reversible issues from irreversible ones. It does not identify which stakeholder concern is mostly political and which one reflects real launch risk. It does not say what the team should stop doing if the launch is delayed.
 
-The second manager also uses AI, but differently. They use it to compare customer feedback patterns, surface missing questions, generate alternate recommendation structures, and test objections. Then they do the harder human work. They talk to engineering about the real dependency, not just the reported timeline. They pressure-test whether the launch date is symbolic or actually tied to a meaningful commercial event. They identify the hidden cost of delay. Their final brief is shorter than the first manager’s, but stronger. It names the real tradeoff. It clarifies who needs to decide. It states what they recommend and why.
+The second manager also uses AI, but differently. They use it to compare customer feedback patterns, surface missing questions, generate alternate recommendation structures, and test objections. Then they do the harder human work. They talk to engineering about the real dependency, not just the reported timeline. They pressure-test whether the launch date is symbolic or actually tied to a meaningful commercial event. They identify the hidden cost of delay. They cut the polished paragraph that says nothing new. They write the recommendation sentence themselves, in their own voice, so the tradeoff is visible instead of implied.
 
-Both managers were assisted.
+That is why the six scarce capacities matter together.
 
-Only one became more valuable.
+- Judgment decides what deserves belief and what needs more checking.
+- Strategic framing decides which decision the team is actually making.
+- Taste cuts the generic language that would make the brief feel complete without making it useful.
+- Voice keeps the recommendation recognizable as an owned point of view.
+- Trust comes from candor about what is known, what is thin, and what the recommendation can honestly support.
+- Synthesis turns separate signals into one recommendation without flattening the differences between them.
 
 The difference was not prompt quality.
 
-It was judgment, synthesis, and trustworthiness under pressure.
-
-That pattern shows up across roles. Equal tool access does not create equal professional value. The differentiator moves to the human capacities that organize, filter, and stand behind the output.
+It was the human capacities that organize, filter, and stand behind the output.
 
 ## The strategic shift: from keeping up to becoming harder to replace from the inside
 

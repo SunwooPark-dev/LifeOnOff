@@ -67,7 +67,7 @@ It helps answer four questions that appear across almost every kind of knowledge
 
 If you keep returning to those questions, the tools can change without destabilizing your judgment.
 
-That is the point of a closing standard like this. It does not depend on a particular product cycle. It depends on knowing what the work is for.
+That is the point of a closing standard like this. It does not depend on a particular product cycle. It depends on knowing what the work is for. The practical memo below turns that standard into a checklist.
 
 ## Automate the surface layer on purpose
 
@@ -264,37 +264,31 @@ The point is to make AI use more intentional at the exact moments when convenien
 
 ## A practical memo for the next few years
 
-If you want a shorter version to carry forward, use this:
+This is the memo to carry forward.
 
-**Automate the routine.  
-Deepen the consequential.  
-Refuse the corrosive.**
+**Automate** the routine.  
+**Deepen** the consequential.  
+**Refuse** the corrosive.
 
-But even that can become a slogan if it is not connected back to daily standards.
+### Writing
+- Automate restructuring, first-pass drafting, and adaptation.
+- Deepen argument, specificity, voice, and editorial judgment.
+- Refuse generic language that sounds finished but says little.
 
-So make it more concrete.
+### Research
+- Automate orientation, summarization, and pattern extraction.
+- Deepen source evaluation, uncertainty tracking, and synthesis.
+- Refuse claims that cannot be responsibly backed.
 
-### In writing
-- Automate restructuring, first-pass drafting, and adaptation
-- Deepen argument, specificity, voice, and editorial judgment
-- Refuse generic language that sounds finished but says little
+### Planning
+- Automate option generation, outline formation, and dependency mapping.
+- Deepen framing, tradeoff analysis, and recommendation quality.
+- Refuse to let a generated plan stand in for a real decision.
 
-### In research
-- Automate orientation, summarization, and pattern extraction
-- Deepen source evaluation, uncertainty tracking, and synthesis
-- Refuse claims that cannot be responsibly backed
-
-### In planning
-- Automate option generation, outline formation, and dependency mapping
-- Deepen framing, tradeoff analysis, and recommendation quality
-- Refuse to let a generated plan stand in for a real decision
-
-### In coordination
-- Automate notes, recap structure, and administrative follow-up
-- Deepen clarification, ownership, disagreement surfacing, and trust
-- Refuse polished false alignment
-
-This is not a temporary adaptation strategy.
+### Coordination
+- Automate notes, recap structure, and administrative follow-up.
+- Deepen clarification, ownership, disagreement surfacing, and trust.
+- Refuse polished false alignment.
 
 ## Return to the book’s original promise
 
