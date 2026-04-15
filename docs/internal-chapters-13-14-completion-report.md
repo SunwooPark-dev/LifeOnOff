@@ -23,11 +23,11 @@ Completed.
 ## Verification summary
 - Draft files exist
 - Placeholder scan on the session-owned files is clean
-- `npm run build` passes
-- `npm test` passes
+- `node scripts/build-check.mjs` passes
+- `node tests/index.test.js` passes (**14/14**)
+- `node scripts/generate-sample-run.mjs` passes
 - Independent verifier cross-check: PASS
-- Architect review found a docs-alignment mismatch, which has now been corrected
-- Final architect re-review pending after this correction
+- Architect slice-coherence review: PASS
 
 ## Verification target
 See `.omx/plans/test-spec-chapters-13-14-drafting.md`.
