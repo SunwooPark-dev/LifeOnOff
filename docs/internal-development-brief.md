@@ -88,6 +88,8 @@ Use this repository as an internal development kit for:
 - `docs/chapters-4-14-coherence-pass-report.md` — completed macro coherence pass across the drafted manuscript
 - `docs/internal-title-subtitle-lock.md` — locked internal working title/subtitle pair
 - `docs/internal-synopsis-annotation-grid.md` — integrated chapter-control annotations for Chapters 1–14
+- `docs/internal-readthrough-packet.md` — completed internal editorial packet for review
+- `docs/internal-readthrough-summary.md` — synthesized read-through findings and prioritized revision roadmap
 - `docs/internal-title-synopsis-pass-report.md` — tracked title-lock and synopsis-annotation pass evidence
 - Completed draft files:
   - `manuscript/sample-chapter-08-writing-with-ai.md`
@@ -103,8 +105,8 @@ Use this repository as an internal development kit for:
   - `manuscript/sample-chapter-14-the-high-agency-future.md`
 
 ## Recommended next internal writing moves
-1. **Prepare one internal read-through packet** now that the title/subtitle lock and synopsis annotations are in place
-2. **Run the internal read-through** against the synopsis annotation grid
+1. **Execute Revision Batch 1** from the internal read-through summary
+2. Re-run a focused read-through on the revised chapters only
 3. Reopen commercialization artifacts only after the manuscript direction feels stable enough to pitch
 
 ## External-track notes for future use
