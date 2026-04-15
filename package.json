@@ -1,0 +1,12 @@
+﻿{
+  "name": "life-ab-test-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node scripts/build-check.mjs",
+    "test": "node tests/index.test.js",
+    "generate": "node scripts/generate-sample-run.mjs"
+  }
+}
