@@ -16,6 +16,8 @@ That is why research is one of the most important places to develop high-agency 
 
 Used well, AI can dramatically improve the early stages of inquiry. It can help you map a field, clarify terminology, compare frameworks, surface likely debates, and generate good next questions. Used badly, it can make you derivative, shallow, or confidently wrong. The line between those two outcomes is not mainly a matter of prompt quality. It is a matter of research discipline.
 
+Good research discipline begins the same way as the rest of serious work: define the research job before you trust the first neat synthesis.
+
 ## The wrong way to research with AI
 
 Weak AI-assisted research often moves in a straight line.
@@ -58,12 +60,14 @@ It is much weaker when asked to:
 - detecting subtle but consequential distortions,
 - and deciding when the available evidence is strong enough to support action.
 
-Treat AI as a research assistant with high speed and uneven reliability — useful for exploration, helpful for synthesis, but never the sole owner of truth.
+Treat AI as a research assistant with high speed and uneven reliability — useful for exploration, helpful for synthesis, but never the sole owner of truth. Keep the evidentiary threshold unmistakably yours.
 
 ## A high-agency workflow for research with AI
 
 ### Step 1. Decide what kind of research you are doing
 Before touching a model, identify the research job.
+
+State it plainly: what you are trying to understand, what this research serves, what level of evidence is required, and what is at stake if the conclusion is weak.
 
 Are you trying to:
 - orient yourself in a new field,
@@ -137,7 +141,7 @@ Useful questions include:
 A good research workflow does not merely compress complexity. It clarifies where complexity still remains.
 
 ### Step 6. Write findings in your own structure
-Once you have enough evidence, do not simply paste together summaries. Rebuild the material in your own logic.
+Once you have enough evidence, review what survives, decide what the evidence actually supports, and record the result in your own structure. Do not simply paste together summaries.
 
 That means deciding:
 - what matters,
@@ -201,9 +205,11 @@ The fourth trap is not tracking uncertainty. In professional settings, uncertain
 ## A practical checklist for research with AI
 
 Before you begin:
+- What problem am I trying to understand?
 - What kind of research am I doing?
 - What is the decision or output this research serves?
 - What level of certainty is required?
+- What is at stake if this conclusion is wrong?
 
 During exploration:
 - Am I building orientation or pretending to verify?

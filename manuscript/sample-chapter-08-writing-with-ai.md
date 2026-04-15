@@ -16,6 +16,8 @@ It can.
 
 The question is whether you will use it to increase the quality of your thinking or merely to increase the speed of your output.
 
+In practice, that means defining the writing job clearly before you delegate a single sentence.
+
 ## The wrong way to write with AI
 
 Most weak AI-assisted writing follows the same sequence.
@@ -80,10 +82,10 @@ That one question prevents a large amount of mediocre output.
 
 ## A high-agency workflow for writing with AI
 
-Here is a practical workflow that keeps the writer in the right role.
+Here is a practical workflow that keeps the writer in the right role: let AI help generate and reshape material, but keep the judgment that determines meaning and send-readiness close to you.
 
 ### Step 1. Define the writing job before asking for language
-Before opening the model, write down four things in plain language:
+Before opening the model, define the writing job in plain language. Then write down the operating details:
 1. **Audience** — Who is this for?
 2. **Purpose** — What should change after they read it?
 3. **Standard** — What does “good” look like here?
@@ -162,6 +164,8 @@ For example:
 
 Voice is not magic. It is often the residue of repeated choices. AI can preserve those choices only if you name them and enforce them.
 
+Across the whole workflow, keep the argument, tone, and final send visibly yours.
+
 ## A real-work scenario
 
 Imagine a strategy lead who needs to write a one-page memo explaining why a team should stop building three features and focus on one.
@@ -219,10 +223,12 @@ The final mistake is forgetting that writing is partly a way of thinking. If you
 ## A practical checklist for writing with AI
 
 Before drafting:
+- What problem am I solving?
 - Do I know the audience?
 - Do I know the point?
 - Do I know what good looks like?
 - Do I know what must not happen?
+- Do I know what is at stake if this lands badly?
 
 During drafting:
 - Am I asking for structure, language, or both?

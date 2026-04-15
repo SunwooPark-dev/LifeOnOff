@@ -18,6 +18,8 @@ That is why planning is one of the most important places to develop high-agency 
 
 Used well, AI can help you widen the field of options, identify missing constraints, compare scenarios, stress-test assumptions, and prepare cleaner decisions. Used badly, it can create the appearance of leadership without the burden of judgment. The problem is not that AI makes planning possible. The problem is that it makes plausible planning cheap.
 
+So the planning spine has to stay explicit: define the problem, the objective, the decision standard, the constraints, and the stakes before you start treating generated options like a real plan.
+
 ## The wrong way to use AI for decisions
 
 Weak AI-assisted planning usually follows a familiar sequence.
@@ -73,7 +75,7 @@ Do not use it to avoid choosing.
 
 ## A high-agency workflow for planning with AI
 
-A strong planning workflow keeps the human in charge of the decision while using AI to improve the quality of preparation.
+A strong planning workflow keeps the human in charge of the decision while using AI to improve the quality of preparation. The sequence is simple: frame the problem, review the options, decide, and record the call clearly enough that it does not get reinvented the next day.
 
 ### Step 1. Name the actual decision
 Before asking for options, write the decision in one sentence.
@@ -124,6 +126,8 @@ This is where AI can outperform a rushed human planner. It can quickly produce p
 
 The point is not to accept every option. The point is to avoid choosing from an artificially narrow set.
 
+This is a good place to keep the allocation boundary visible: delegate option expansion, supervise comparison, and keep the recommendation human-owned.
+
 ### Step 4. Turn options into tradeoff tables
 Once the option set is broad enough, force structure.
 
@@ -156,7 +160,7 @@ The point is not to become paralyzed. The point is to reduce avoidable blindness
 
 A good planning process does not merely generate support for the favored option. It creates organized resistance before reality has to do it for you.
 
-### Step 6. Write the recommendation in human language
+### Step 6. Write and record the recommendation in human language
 After the option work, comparison, and premortem, the leader must take the planning output back into human ownership.
 
 That means writing, in plain terms:
@@ -165,7 +169,8 @@ That means writing, in plain terms:
 - what cost you are knowingly accepting,
 - what uncertainty remains,
 - what would cause you to revisit the decision,
-- and what the next action is.
+- what the next action is,
+- and what should be recorded so the decision, assumptions, and trigger points stay traceable.
 
 This is where many people try to disappear into AI-generated neutrality. Do not.
 
@@ -239,11 +244,13 @@ The final trap is overestimating prediction. Planning is partly about foresight,
 ## A practical checklist for planning and decision-making with AI
 
 Before using AI:
+- What problem am I actually solving?
 - What is the exact decision?
 - Who owns it?
 - What criteria should govern it?
 - What constraints and non-negotiables are real?
 - How reversible is this decision?
+- What is at stake if I optimize for the wrong thing?
 
 During planning:
 - Am I expanding options or pretending to choose already?

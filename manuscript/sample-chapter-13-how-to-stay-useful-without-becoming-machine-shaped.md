@@ -2,23 +2,19 @@
 
 ## Chapter 13. How to Stay Useful Without Becoming Machine-Shaped
 
-Chapter 12 argued that as AI makes competent output cheaper, certain human capacities become more valuable: judgment, trust, voice, taste, synthesis, and strategic framing.
+Chapter 12 named where value rises when AI makes competent output cheap.
 
-That is true at the level of economics and organizational value. But it leaves a more personal question open.
+This chapter asks a different question: what habits drift in the wrong direction while that shift is happening?
 
-What happens to the worker?
-
-Not in theory. In practice. In the texture of a normal week. In how you write, decide, respond, recommend, and supervise. In what other people begin to rely on you for. In the habits that get rewarded when speed is abundant and polished output is easy to produce.
-
-That is the question of this chapter.
+Not in theory. In the texture of a normal week. In how you write, decide, respond, recommend, and supervise. In what other people begin to rely on you for. In the behaviors that get rewarded when speed is abundant and polished output is easy to produce.
 
 It is possible to use AI constantly and become more useful. It is also possible to use AI constantly and slowly reorganize yourself around the machine’s strengths: quick drafting, quick summarization, quick reformulation, quick plausibility. When that happens, the person may look productive while becoming thinner. Faster, but easier to substitute. More responsive, but less distinctive. Surrounded by output, but less present inside the work.
 
 That is what I mean by becoming machine-shaped.
 
-This is not a moral warning against tools. It is a professional warning about adaptation. Every powerful tool rewards certain habits. AI rewards speed, abundance, and surface fluency. If you are not careful, those rewards begin to shape your behavior, your standards, and eventually your career.
+This is not a moral warning against tools. It is a behavioral warning about adaptation. AI rewards speed, abundance, and surface fluency. If you are not careful, those rewards begin to shape your habits before they reshape your career.
 
-So the aim is not to avoid AI. The aim is to use it in a way that creates leverage without creating dependency, speed without self-erasure, and scale without a loss of authorship.
+So the aim is not to avoid AI. The aim is to build counter-habits strong enough to keep leverage from turning into drift.
 
 ## Machine-shaped is a behavioral drift
 
@@ -39,7 +35,7 @@ You do not usually get replaced because one model did your entire job in front o
 
 ## Four ways people become machine-shaped
 
-The clearest way to understand this drift is through recognizable failure patterns. These are not personality types. They are work habits that can emerge in almost any role.
+The clearest way to understand this drift is through recognizable failure patterns. These are not personality types. They are work habits that can emerge in almost any role. Each one also suggests a counter-habit.
 
 ### 1. The prompt relay
 
@@ -55,6 +51,8 @@ This is one of the easiest traps to fall into because organizations reward respo
 
 Leverage becomes dependency when the worker no longer adds much between the incoming request and the outgoing artifact.
 
+The counter-habit is to add interpretation before acceleration. Name the decision, the stake, or the standard in your own words before you ask the system to help produce the artifact.
+
 ### 2. The pre-thought automator
 
 The second failure pattern is using AI before the work has been defined.
@@ -68,6 +66,8 @@ The pre-thought automator may generate a project plan before clarifying success 
 This matters for a deeper reason than quality control. Some forms of friction are developmental. Naming the problem, choosing the frame, and holding uncertainty long enough to define it properly are part of the job. If you routinely outsource that stage, you are not just saving time. You are weakening the part of yourself that should become stronger as you grow.
 
 Speed is helpful. But speed gained by skipping the stage where judgment forms is often a disguised loss.
+
+The counter-habit is to make framing precede generation. Write the problem statement first, even if it is only a few lines, so the tool is helping a defined job instead of replacing the act of definition.
 
 ### 3. The confidence launderer
 
@@ -83,6 +83,8 @@ AI is very good at making uncertainty sound organized. That is useful when you a
 
 This is where authorship matters most. If you cannot explain which claims were verified, which tradeoffs are still unsettled, and which recommendation is actually yours, then the work may be polished but it is not fully owned.
 
+The counter-habit is to keep uncertainty legible. Mark what is verified, what is inferred, and what still depends on judgment instead of letting fluency do that social work for you.
+
 ### 4. The disappearing voice
 
 The fourth failure pattern is self-erasure through stylistic convergence.
@@ -96,6 +98,8 @@ Voice at work is not just literary style. It is the visible shape of standards. 
 That has professional consequences. Trust compounds faster when people can detect a stable mind behind the work. So does responsibility. If every artifact feels as though it came from an interchangeable system, then the worker may still be useful at the level of throughput but less useful at the level of judgment.
 
 This is what self-erasure looks like in practice. Not dramatic surrender. Quiet flattening.
+
+The counter-habit is to preserve a non-delegable core: the framing sentence, the recommendation, the final cut, the source check, the difficult conversation, or whatever part of the workflow must still visibly sound like you and your standards.
 
 ## Why these patterns get rewarded before they get punished
 
@@ -155,7 +159,7 @@ That is what staying useful looks like. Not refusing the tool. Not romanticizing
 
 ## Habits that keep leverage from turning into dependency
 
-If the failure patterns above describe what to watch for, the next question is what to do instead. The answer is not a vague commitment to “be more human.” It is a set of concrete work habits.
+If the failure patterns above describe the drift, the habits below are the correction. The answer is not a vague commitment to “be more human.” It is a set of concrete work habits that interrupt machine-shaping before it becomes professional identity.
 
 ### Write the problem statement before you generate the solution
 
@@ -242,12 +246,10 @@ You want to become the person who can use AI to reduce drudgery, widen options, 
 
 That is what it means to stay useful without becoming machine-shaped.
 
-And once that becomes the aim, the next question is not just how to protect yourself from bad habits. It is how to choose a durable philosophy of use.
+And once that becomes the aim, three practical questions remain.
 
 What should you automate because friction there is mostly waste?  
 What should you deepen because that is where your judgment compounds?  
 What should you refuse because the cost to trust, authorship, or human presence is too high?
 
-That is where the book ends.
-
-Chapter 14 turns those questions into a closing framework for living and working with AI as it becomes ordinary.
+Chapter 14 turns those questions into a closing standard of use.

@@ -2,19 +2,19 @@
 
 ## Chapter 14. The High-Agency Future
 
-By this point, the pattern should be clear.
+This chapter compresses the operating system the earlier chapters built into one closing standard.
 
-AI makes many parts of knowledge work faster. It helps produce drafts, summaries, options, rewrites, comparisons, recaps, and first-pass structures with much less friction than before. That is true in writing. It is true in research. It is true in planning. It is true in coordination.
+Chapters 4 through 7 established the core disciplines: think before you prompt, build workflows instead of tricks, keep the human in the right loop, and defend taste and standards against generic output. Chapters 8 through 11 showed those disciplines inside writing, research, planning, and coordination. Chapters 12 and 13 then clarified two consequences: what becomes more valuable when AI makes competent output cheap, and what habits make a worker easier to flatten while that shift is happening.
 
-But the deeper question of this book was never whether AI could make those activities move faster.
+So the closing question is not whether AI can make knowledge work faster. The book has already answered that.
 
-The deeper question was what happens to the worker when they do.
+The closing question is how to carry the same operating system forward once AI becomes ordinary.
 
 If speed rises while standards stay weak, the result is not leverage. It is acceleration without judgment. If output becomes cheap while authorship becomes blurry, the result is not progress. It is professional self-erasure wearing the clothes of efficiency.
 
 That is why the right conclusion to this book is not a prediction.
 
-It is an operating standard.
+It is a short operating standard.
 
 The future of work with AI will not be decided mainly by whether someone has access to a slightly better model, a more convenient interface, or a longer list of prompts. It will be shaped by a simpler set of choices repeated every day: what you automate, what you deepen, and what you refuse.
 
@@ -48,7 +48,7 @@ That question is less theatrical and more important.
 
 Because the real risk is not that the future becomes fully machine-run overnight. The real risk is that people slowly stop noticing which parts of their work still deserve a human mind at full strength.
 
-## A closing framework that holds under pressure
+## A closing standard that holds under pressure
 
 If you need a simple way to keep your bearings, use this:
 
@@ -56,9 +56,7 @@ If you need a simple way to keep your bearings, use this:
 - **Deepen** what requires judgment, taste, trust, synthesis, and responsibility.
 - **Refuse** uses of AI that weaken authorship, hide accountability, or simulate understanding where real understanding is still required.
 
-This is not a moral sorting system.
-
-It is a practical allocation system.
+Think before you prompt so you know what should be automated at all. Build workflows so automation stays repeatable instead of gimmicky. Keep the human in the right loop so deep work remains owned at consequential points. Maintain taste and standards so refusal is real instead of rhetorical.
 
 It helps answer four questions that appear across almost every kind of knowledge work:
 
@@ -69,7 +67,7 @@ It helps answer four questions that appear across almost every kind of knowledge
 
 If you keep returning to those questions, the tools can change without destabilizing your judgment.
 
-That is the point of a framework like this. It does not depend on a particular product cycle. It depends on knowing what the work is for.
+That is the point of a closing standard like this. It does not depend on a particular product cycle. It depends on knowing what the work is for.
 
 ## Automate the surface layer on purpose
 
@@ -227,7 +225,7 @@ Someone should still be accountable for what is being claimed, recommended, or c
 
 ## The framework in practice
 
-If the automate / deepen / refuse frame is going to be useful, it has to survive contact with an ordinary week.
+If this standard is going to be useful, it has to survive contact with an ordinary week.
 
 Here is what that looks like in practical terms.
 
@@ -298,8 +296,6 @@ So make it more concrete.
 
 This is not a temporary adaptation strategy.
 
-It is a stable way to keep the worker stronger while the tools get better.
-
 ## Return to the book’s original promise
 
 The promise of this book was not that AI would make work effortless.
@@ -334,7 +330,7 @@ AI will keep getting woven into ordinary work.
 
 That is not the part that most needs your imagination.
 
-What needs your imagination is how to remain deliberate inside that reality.
+What needs your imagination is how to remain deliberate inside that reality once the tools feel normal.
 
 Use the tools where they remove waste.  
 Push your own attention toward the decisions, interpretations, standards, and relationships that become more valuable as output gets cheaper.  

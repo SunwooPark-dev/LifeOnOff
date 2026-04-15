@@ -20,6 +20,8 @@ That makes communication one of the sharpest tests of high-agency work.
 
 Used well, AI can help teams prepare better meetings, write clearer briefs, compress messy discussions, translate between functions, and preserve decision traceability. Used badly, it becomes a coordination theater machine: it creates the appearance of clarity without the burden of making anyone think more carefully, decide more explicitly, or own the consequences.
 
+So the same discipline still applies: define the communication job clearly before polished artifacts start multiplying.
+
 The question is not whether AI can improve communication.
 
 It can.
@@ -101,11 +103,12 @@ Are you trying to:
 
 Those are different jobs. A good summary for record-keeping is not the same as a good brief for decision-making. A strong cross-functional update is not the same as a leadership memo. Many communication failures begin because the artifact is created before the job is named.
 
-Write down four things:
-1. **Audience** — Who needs this?
-2. **Purpose** — What should change after they read it?
-3. **Decision status** — What is already decided, and what is still open?
-4. **Risk** — What misunderstanding would be costly here?
+Write down five things:
+1. What situation needs shared understanding?
+2. What should change for this audience after they read it?
+3. What is already decided, and what is still open?
+4. What timing, dependency, or political limits shape the message?
+5. What misunderstanding would be costly here?
 
 That small step often prevents pages of polished confusion.
 
@@ -139,7 +142,7 @@ Preparation is often more valuable than recap.
 ### Step 4. During and after the meeting, separate raw capture from official meaning
 AI can help transcribe, summarize, and structure notes. That is useful. But do not confuse raw capture with final truth.
 
-After a meeting, separate the record into four categories:
+After a meeting, review the notes and separate the record into four categories:
 - **Decisions made**
 - **Open questions**
 - **Assigned actions**
@@ -164,7 +167,7 @@ Every recap should answer:
 - When does it need to happen?
 - What dependency or constraint could block progress?
 
-AI is especially useful for converting rough notes into a first draft of this structure. But a human should confirm the owners, dates, and unresolved tensions before sending it out. If the follow-up makes everyone feel informed but no one feels accountable, it has failed.
+AI is especially useful for converting rough notes into a first draft of this structure. But a human should confirm the owners, dates, and unresolved tensions before sending it out. If the follow-up makes everyone feel informed but no one feels accountable, it has failed. Let AI handle the formatting and first-pass synthesis, but keep interpretation, commitments, and handoffs unmistakably human-owned.
 
 ### Step 6. Turn clarity into owned next moves
 Before treating the communication loop as complete, ask a final set of questions:
@@ -251,7 +254,7 @@ Now the follow-up does real work. It does not pretend the team has already achie
 That is high-agency communication with AI.
 
 The model accelerates structure.
-The human protects meaning.
+The human still decides what the meeting meant and who now owns what.
 
 ## Where AI helps most in team coordination
 
@@ -301,9 +304,11 @@ False alignment is expensive precisely because it feels efficient.
 
 Before the meeting or update:
 - What is the communication job: inform, decide, align, escalate, hand off, or record?
+- What problem am I trying to make legible?
 - Who is the audience?
 - What misunderstanding would be most costly?
 - What decision is already made, and what is still open?
+- What constraint or stake will shape how this lands?
 
 When drafting a brief:
 - Does this explain the real issue, not just the official topic?

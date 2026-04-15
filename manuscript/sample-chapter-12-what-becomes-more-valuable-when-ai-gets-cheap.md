@@ -2,11 +2,11 @@
 
 ## Chapter 12. What Becomes More Valuable When AI Gets Cheap
 
-Chapters 8 through 11 showed how AI makes writing, research, planning, and coordination cheaper.
+The earlier chapters established an operating model, then showed what that model looks like in practice across writing, research, planning, and coordination.
 
-That matters because the value in those workflows does not live only in producing a draft, a summary, an option set, or a recap. The value increasingly lives in what happens after those first-pass artifacts exist: deciding what matters, checking what is true, choosing what to keep, and taking responsibility for the result.
+This chapter pulls those layers together at the level of value.
 
-So this chapter is not a repeat of the introduction’s broad argument about scarcity. It is the practical version. Once competent-looking output is easy to produce, the scarce work shifts toward judgment, trust, synthesis, taste, voice, and strategic framing — the capacities that turn abundant output into work worth relying on.
+Once competent-looking output becomes cheap, the scarce work shifts toward judgment, trust, synthesis, taste, voice, and strategic framing — the capacities that turn abundant output into work worth relying on.
 
 The question is no longer only, “How do I use AI to keep up?” It becomes, “What part of my contribution still matters when keeping up is cheap?”
 
@@ -67,23 +67,23 @@ Strategic framing means defining the actual problem before everyone spends time 
 
 It is the upstream skill beneath good prompting, good planning, and good leadership. When AI can generate motion quickly, framing becomes more important because the cost of moving in the wrong direction falls only for a moment. The cost of acting on the wrong frame still lands in time, trust, money, and morale.
 
-## A representative shift across the earlier chapters
+## How the earlier chapters connect
 
-Seen together, Chapters 8 through 11 describe a pattern.
+Seen together, the earlier chapters describe one consistent shift.
 
-AI lowers the cost of the first pass.
-- In writing, it lowers the cost of a draft.
-- In research, it lowers the cost of orientation.
-- In planning, it lowers the cost of option generation.
-- In coordination, it lowers the cost of recap and follow-up.
+Chapters 4 through 7 named the operating disciplines:
+- define the work before you generate around it;
+- build a repeatable workflow instead of chasing prompt tricks;
+- keep human ownership at the consequential points;
+- and use taste to reject polished but generic output.
 
-But each chapter also points to the same deeper move:
-- the writer must keep the voice;
-- the researcher must keep the evidence honest;
-- the planner must keep the decision owned;
-- the team must keep the alignment real.
+Chapters 8 through 11 showed where those disciplines cash out:
+- in writing, AI lowers the cost of a draft, so voice and editorial judgment matter more;
+- in research, AI lowers the cost of orientation, so evidentiary discipline matters more;
+- in planning, AI lowers the cost of option generation, so framing and owned tradeoffs matter more;
+- in coordination, AI lowers the cost of recap and follow-up, so real alignment and accountability matter more.
 
-That is why the most valuable human contribution shifts upward. The work is no longer just “make the thing.” It is “make the thing matter.”
+That is why the most valuable human contribution shifts upward. The work is no longer just “make the artifact.” It is “make the artifact true, useful, and worth acting on.”
 
 ## The wrong way to respond to the shift
 
@@ -121,7 +121,7 @@ That pattern shows up across roles. Equal tool access does not create equal prof
 
 This is the career question Chapter 12 is meant to open.
 
-Once AI lowers the cost of competent production, professionals need a different strategy from simple acceleration. The aim is not only to do more with AI. The aim is to become harder to replace from the inside of your function.
+Once AI lowers the cost of competent production, professionals need a different strategy from simple acceleration. The aim is not only to do more with AI. The aim is to become harder to replace from the inside of your function by moving toward the parts of the workflow the earlier chapters kept protecting.
 
 That usually means moving in five directions.
 
