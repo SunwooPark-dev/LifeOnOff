@@ -17,6 +17,10 @@ This means the project should currently be used to refine concept, structure, an
 - Sample introduction
 - Sample chapter: **Writing with AI**
 - Sample chapter: **Research with AI**
+- Sample chapter: **Think Before You Prompt**
+- Sample chapter: **Build Workflows, Not Tricks**
+- Sample chapter: **Keep the Human in the Loop — but Put the Human in the Right Loop**
+- Sample chapter: **Taste, Standards, and the Fight Against Generic Output**
 - Sample chapter: **Planning and Decision-Making with AI**
 - Sample chapter: **Communication, Meetings, and Coordination**
 - Sample chapter: **What Becomes More Valuable When AI Gets Cheap**
@@ -33,10 +37,19 @@ This means the project should currently be used to refine concept, structure, an
 5. `manuscript/toc-v1-high-agency-ai-worker.md`
 6. `manuscript/full-chapter-synopsis-high-agency-ai-worker.md`
 7. `manuscript/sample-introduction-high-agency-ai-worker.md`
-8. `manuscript/sample-chapter-08-writing-with-ai.md`
-9. `manuscript/sample-chapter-09-research-with-ai.md`
-10. `marketing/comparable-titles-sheet.md`
-11. `marketing/manuscript-scope-note.md`
+8. `manuscript/sample-chapter-04-think-before-you-prompt.md`
+9. `manuscript/sample-chapter-05-build-workflows-not-tricks.md`
+10. `manuscript/sample-chapter-06-keep-the-human-in-the-loop-but-put-the-human-in-the-right-loop.md`
+11. `manuscript/sample-chapter-07-taste-standards-and-the-fight-against-generic-output.md`
+12. `manuscript/sample-chapter-08-writing-with-ai.md`
+13. `manuscript/sample-chapter-09-research-with-ai.md`
+14. `manuscript/sample-chapter-10-planning-and-decision-making-with-ai.md`
+15. `manuscript/sample-chapter-11-communication-meetings-and-coordination.md`
+16. `manuscript/sample-chapter-12-what-becomes-more-valuable-when-ai-gets-cheap.md`
+17. `manuscript/sample-chapter-13-how-to-stay-useful-without-becoming-machine-shaped.md`
+18. `manuscript/sample-chapter-14-the-high-agency-future.md`
+19. `marketing/comparable-titles-sheet.md`
+20. `marketing/manuscript-scope-note.md`
 
 ## Locked decisions for the internal lane
 - The strongest current concept remains **The High-Agency AI Worker**
@@ -66,7 +79,15 @@ Use this repository as an internal development kit for:
 - `docs/internal-next-three-chapters-drafting-plan.md` — completed internal plan for Chapters 10, 11, and 12
 - `docs/chapter-8-12-rhythm-pass-report.md` — completed macro editorial pass across Chapters 8–12
 - `docs/internal-chapters-13-14-drafting-plan.md` — completed internal plan for Chapters 13 and 14
+- `docs/internal-chapters-4-7-drafting-plan.md` — completed internal plan for Chapters 4 through 7
+- `docs/internal-chapters-4-7-completion-report.md` — completed Part II backfill report for Chapters 4 through 7
+- `docs/internal-chapters-4-7-verification-report.md` — tracked verification evidence for the Chapters 4 through 7 cluster
+- `docs/chapters-4-14-coherence-pass-report.md` — completed macro coherence pass across the drafted manuscript
 - Completed draft files:
+  - `manuscript/sample-chapter-04-think-before-you-prompt.md`
+  - `manuscript/sample-chapter-05-build-workflows-not-tricks.md`
+  - `manuscript/sample-chapter-06-keep-the-human-in-the-loop-but-put-the-human-in-the-right-loop.md`
+  - `manuscript/sample-chapter-07-taste-standards-and-the-fight-against-generic-output.md`
   - `manuscript/sample-chapter-10-planning-and-decision-making-with-ai.md`
   - `manuscript/sample-chapter-11-communication-meetings-and-coordination.md`
   - `manuscript/sample-chapter-12-what-becomes-more-valuable-when-ai-gets-cheap.md`
@@ -74,11 +95,10 @@ Use this repository as an internal development kit for:
   - `manuscript/sample-chapter-14-the-high-agency-future.md`
 
 ## Recommended next internal writing moves
-1. **Backfill Chapters 4–7 next**, then run a wider coherence pass across the operating-model and applications spine
-2. **Run a Part II ↔ Part III ↔ Part IV continuity pass after that** so the framework chapters and practical chapters feel fully earned together
-3. **Lock one working title/subtitle pair** for manuscript continuity
-4. **Annotate the synopsis** with “must-prove” examples, cases, or arguments for the remaining undrafted chapters
-5. Reopen commercialization artifacts only after the manuscript direction feels stable enough to pitch
+1. **Lock one working title/subtitle pair** for manuscript continuity before any future pitch packaging
+2. **Annotate the synopsis** with “must-prove” examples, cases, or arguments for the remaining undrafted chapters
+3. **Prepare one internal read-through packet** once the title/subtitle and synopsis annotations are stable
+4. Reopen commercialization artifacts only after the manuscript direction feels stable enough to pitch
 
 ## External-track notes for future use
 - `marketing/submission-ready-publisher-packet.md` remains a useful future packaging template
