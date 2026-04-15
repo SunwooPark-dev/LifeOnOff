@@ -20,6 +20,8 @@ This means the project should currently be used to refine concept, structure, an
 - Sample chapter: **Planning and Decision-Making with AI**
 - Sample chapter: **Communication, Meetings, and Coordination**
 - Sample chapter: **What Becomes More Valuable When AI Gets Cheap**
+- Sample chapter: **How to Stay Useful Without Becoming Machine-Shaped**
+- Sample chapter: **The High-Agency Future**
 - Comparable titles sheet
 - Manuscript scope note
 
@@ -63,14 +65,17 @@ Use this repository as an internal development kit for:
 ## Current active drafting artifact
 - `docs/internal-next-three-chapters-drafting-plan.md` — completed internal plan for Chapters 10, 11, and 12
 - `docs/chapter-8-12-rhythm-pass-report.md` — completed macro editorial pass across Chapters 8–12
+- `docs/internal-chapters-13-14-drafting-plan.md` — completed internal plan for Chapters 13 and 14
 - Completed draft files:
   - `manuscript/sample-chapter-10-planning-and-decision-making-with-ai.md`
   - `manuscript/sample-chapter-11-communication-meetings-and-coordination.md`
   - `manuscript/sample-chapter-12-what-becomes-more-valuable-when-ai-gets-cheap.md`
+  - `manuscript/sample-chapter-13-how-to-stay-useful-without-becoming-machine-shaped.md`
+  - `manuscript/sample-chapter-14-the-high-agency-future.md`
 
 ## Recommended next internal writing moves
-1. **Draft Chapters 13–14 next** while Chapter 12’s Part IV hinge is still fresh
-2. **Backfill Chapters 4–7 after that**, then run a wider coherence pass across the operating-model and applications spine
+1. **Backfill Chapters 4–7 next**, then run a wider coherence pass across the operating-model and applications spine
+2. **Run a Part II ↔ Part III ↔ Part IV continuity pass after that** so the framework chapters and practical chapters feel fully earned together
 3. **Lock one working title/subtitle pair** for manuscript continuity
 4. **Annotate the synopsis** with “must-prove” examples, cases, or arguments for the remaining undrafted chapters
 5. Reopen commercialization artifacts only after the manuscript direction feels stable enough to pitch
