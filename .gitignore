@@ -9,3 +9,4 @@ node_modules/
 .env.*
 .hermes/
 .omx/
+docs/PR_OPEN_URL.txt

@@ -21,16 +21,22 @@ test('history rendering uses DOM nodes and keeps text literal', () => {
   assert.match(text, /<b>title<\/b>/);
   assert.equal(findTags(fragment, 'script').length, 0);
   assert.equal(findTags(fragment, 'img').length, 0);
+  assert.equal(findTags(fragment, 'svg').length, 0);
 });
 
 test('result rendering uses DOM nodes and keeps malicious text inert', () => {
   const doc = createDocumentStub();
   const maliciousReport = structuredClone(report);
   maliciousReport.humanReport.topline_verdict = '<script>alert(1)</script>';
+  maliciousReport.humanReport.warnings = ['<img src=x onerror=2>'];
+  maliciousReport.humanReport.assumptions = ['<svg onload=3>'];
   const fragment = createResultsFragment(maliciousReport, '<img src=x onerror=1>', doc);
   const text = collectText(fragment);
   assert.match(text, /<script>alert\(1\)<\/script>/);
   assert.match(text, /<img src=x onerror=1>/);
+  assert.match(text, /<img src=x onerror=2>/);
+  assert.match(text, /<svg onload=3>/);
   assert.equal(findTags(fragment, 'script').length, 0);
   assert.equal(findTags(fragment, 'img').length, 0);
-});
+  assert.equal(findTags(fragment, 'svg').length, 0);
+});

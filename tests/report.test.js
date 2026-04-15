@@ -24,6 +24,9 @@ test('report contains required appendix contracts and guardrails', () => {
   assert.equal(report.jsonAppendix.scenario_graph_summary.length, 6);
   assert.ok(report.jsonAppendix.mvp_backlog.length >= 10);
   assert.ok(report.humanReport.warnings.length >= 2);
+  assert.ok(report.humanReport.warnings.some((item) => item.includes('\uAC74\uAC15/\uC758\uB8CC \uD310\uB2E8')));
+  assert.ok(report.humanReport.warnings.some((item) => item.includes('must_avoid\uC5D0 \uBBFC\uAC10 \uD0A4\uC6CC\uB4DC')));
+  assert.ok(report.humanReport.warnings.every((item) => !item.includes('??')));
   assert.ok(report.humanReport.comparative_summary.some((item) => item.includes('must_consider')));
   assert.ok(report.humanReport.risk_regret_summary.every((entry) => entry.confidence !== 'high'));
 });
@@ -32,6 +35,7 @@ test('merged markdown contains key sections and export guide is present', () => 
   const merged = createMergedMarkdown(input, simulation, report);
   const exportGuide = createPdfReadyExportGuide();
   assert.match(merged, /Topline verdict/);
+  assert.match(merged, /\uAC74\uAC15\/\uC758\uB8CC \uD310\uB2E8/);
   assert.match(merged, /머신 리더블 JSON 부록/);
   assert.match(exportGuide, /generated\/life-ab-test-merged-master\.md/);
-});
+});
