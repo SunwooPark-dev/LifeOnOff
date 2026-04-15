@@ -3,6 +3,10 @@
 ## Goal
 Turn the structurally complete publisher packet into a truly send-ready submission package.
 
+## Current status note
+This checklist is **future external-track only**.
+It is not required for the current internal development lane.
+
 ## Phase A — Author identity completion
 - [ ] Replace `[Author Name]` in `marketing/author-bio-platform-sheet.md`
 - [ ] Replace all `[insert]` fields with real links, counts, and credentials

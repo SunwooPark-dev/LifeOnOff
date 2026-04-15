@@ -4,9 +4,11 @@
 
 Research used to fail slowly.
 
+If writing tests what you can shape, research tests what you can trust.
+
 You read the wrong sources, missed an important paper, trusted the wrong expert, or stopped too early. The errors accumulated over time. Today, research can fail much faster. With AI, you can generate a convincing landscape of a topic in minutes. You can receive summaries, comparisons, key themes, likely objections, historical context, and recommended next steps before you have fully learned the shape of the problem. That speed is useful. It is also dangerous.
 
-Because the biggest risk in AI-assisted research is not ignorance. It is false confidence.
+The biggest risk in AI-assisted research is not ignorance. It is false confidence.
 
 A person who knows they have not researched enough is still reachable. They are cautious. They hesitate. They ask for more time. A person with AI-generated synthesis in front of them may feel informed before they are grounded. They may mistake coherence for truth, coverage for depth, and plausible explanation for verified understanding.
 
@@ -16,11 +18,11 @@ Used well, AI can dramatically improve the early stages of inquiry. It can help 
 
 ## The wrong way to research with AI
 
-Weak AI-assisted research usually follows a familiar pattern.
+Weak AI-assisted research often moves in a straight line.
 
 A person asks a broad question. The model returns a neat answer. The answer contains enough structure and confidence to feel like orientation. The person then begins using that orientation as if it were evidence. They summarize it to others. They draft from it. They make recommendations from it. Eventually, the entire project rests on an information layer that was never properly checked.
 
-This creates four recurring failures.
+That pattern creates four recurring failures.
 
 ### 1. The map replaces the territory
 AI is good at creating an overview. But an overview is not the thing itself. A synthesized map of a field is useful only if you remember it is compressed, selective, and vulnerable to distortion.
@@ -40,7 +42,7 @@ These are not abstract concerns. They shape whether your recommendations, writin
 
 AI is not a replacement for research judgment. It is a force multiplier at specific stages.
 
-It is especially strong at:
+It is especially useful for:
 - helping you begin,
 - clarifying vocabulary,
 - generating possible angles,
@@ -49,14 +51,14 @@ It is especially strong at:
 - surfacing likely questions,
 - and helping you reorganize findings once you already have evidence.
 
-It is much weaker at:
+It is much weaker when asked to:
 - guaranteeing factual accuracy,
 - telling you what matters most,
 - understanding the trustworthiness of a source in real context,
 - detecting subtle but consequential distortions,
 - and deciding when the available evidence is strong enough to support action.
 
-That means AI should be treated as a research assistant with high speed and uneven reliability — useful for exploration, helpful for synthesis, but never the sole owner of truth.
+Treat AI as a research assistant with high speed and uneven reliability — useful for exploration, helpful for synthesis, but never the sole owner of truth.
 
 ## A high-agency workflow for research with AI
 
@@ -76,7 +78,7 @@ Different research jobs require different standards.
 
 If you are making a strategic decision, the bar is higher than if you are simply trying to understand the outline of a new subject. Many research failures begin when the standard is not named.
 
-### Step 2. Use AI first for orientation, not conclusion
+### Step 2. Use AI for orientation, not conclusion
 In the early stage, AI can help you generate a preliminary map:
 - key concepts,
 - major schools of thought,
@@ -90,7 +92,7 @@ This is valuable because bad research often starts with bad search vocabulary. A
 But orientation is only the first move. Do not let orientation harden into belief before evidence arrives.
 
 ### Step 3. Separate exploration from verification
-One of the best habits in AI-assisted research is keeping two explicit phases.
+A strong AI-assisted research workflow keeps exploration and verification separate.
 
 #### Phase A: Exploration
 This is where you ask:
@@ -108,12 +110,12 @@ This is where you ask:
 - What is uncertain?
 - What would make this interpretation weaker?
 
-The biggest mistake is to blend these phases together. AI excels in exploration. Human rigor must dominate verification.
+The mistake is to blend these phases together. AI excels in exploration. Human rigor must dominate verification.
 
 ### Step 4. Build a source ladder
 Not all evidence should be treated equally. A practical way to improve research quality is to build a source ladder.
 
-For example:
+For example, a rough ladder might look like this:
 1. primary documents, original data, direct statements
 2. credible expert analysis
 3. strong secondary reporting
@@ -167,7 +169,7 @@ A stronger process would look different.
 5. Use AI to help organize the findings, compare scenarios, and identify gaps in the argument.
 6. Draft the final recommendation in human language with explicit tradeoffs and acknowledged uncertainty.
 
-Here AI is valuable throughout the process, but it never becomes the final authority. It helps structure thinking. It does not replace the burden of proof.
+AI is valuable throughout the process, but it never becomes the final authority. It helps structure thinking. It does not replace the burden of proof.
 
 ## Where AI helps most in research
 
@@ -238,3 +240,5 @@ The point of research is not to sound informed.
 The point of research is to become worthy of trust.
 
 That is the standard high-agency work demands.
+
+And once the research is grounded, the next question is no longer what is true. It is what to do about it. That is where planning begins.

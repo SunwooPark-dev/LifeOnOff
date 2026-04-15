@@ -6,7 +6,7 @@ A few years ago, bad writing was usually slow.
 
 It took time to produce clumsy memos, bloated emails, vague strategy drafts, and lifeless thought pieces. Someone had to sit there and type every unnecessary word. Today, bad writing can arrive at high speed. It can be grammatically clean, neatly formatted, plausible in tone, and completely forgettable. AI has made it easier than ever to produce language that looks finished before it has earned the right to exist.
 
-That is why writing is one of the best places to understand both the value and the danger of AI.
+Writing makes both sides visible at once: the promise of faster thinking and the risk of easier emptiness.
 
 Used well, AI can help a writer think faster, explore more options, improve structure, reduce friction, and revise with more stamina than most people can manage alone. Used badly, it can turn a living idea into generic paste. It can sand away tension, flatten voice, and create a kind of professional fog: language that sounds competent enough to survive but not strong enough to matter.
 
@@ -250,3 +250,5 @@ Do not ask it to decide what matters.
 Ask it to help you build something clearer, stronger, and more exact once you do.
 
 That is how writing stays human, even when the workflow changes.
+
+The next chapter asks the same question about research: not only what can be said cleanly, but what can be trusted at all.

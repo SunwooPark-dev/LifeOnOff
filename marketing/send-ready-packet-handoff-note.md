@@ -1,7 +1,9 @@
 ﻿# Send-Ready Packet Handoff Note — The High-Agency AI Worker
 
 ## Current state
-The project is structurally complete for early publishing outreach.
+- **Active lane:** internal editorial development
+- **External commercialization / live submission:** deferred
+- The project is structurally complete enough for internal concept, structure, and sample-writing work.
 
 ## What is already done
 - Research archive
@@ -18,7 +20,7 @@ The project is structurally complete for early publishing outreach.
 - Manuscript scope note
 - Submission-ready packet index
 
-## What still requires human input
+## What is not required for internal use right now
 - final author name
 - real bio credentials
 - website/newsletter/social links
@@ -26,13 +28,20 @@ The project is structurally complete for early publishing outreach.
 - speaking/media proof
 - final title/subtitle lock if desired
 
-## Recommended completion flow
-1. Fill `marketing/author-intake-questionnaire.md`
-2. Update `marketing/author-bio-platform-sheet.md`
-3. Review `marketing/send-ready-finalization-checklist.md`
-4. Freeze final title/subtitle
-5. Export/merge final submission packet if needed
+## What remains deferred for the future external track
+- final author name
+- real bio credentials
+- website/newsletter/social links
+- audience size / reach details
+- speaking/media proof
+- final title/subtitle lock if desired
+
+## Recommended internal-use flow
+1. Start with `docs/internal-development-brief.md`
+2. Review positioning, title options, TOC, synopsis, and sample chapters in canonical order
+3. Decide the next internal manuscript expansion tasks
+4. Reopen `marketing/author-intake-questionnaire.md` only when the project explicitly returns to external submission prep
 
 ## Status language
-- **Structurally submission-ready:** yes
-- **Actually send-ready:** not yet, pending real author/platform data
+- **Internally development-ready:** yes
+- **Actually send-ready for external use:** no, intentionally deferred pending a future commercialization phase
