@@ -8,7 +8,7 @@ A decision could be sound and still vanish the moment it had to move through dif
 
 Now communication can fail in a much cleaner way.
 
-With AI, a team can produce a tidy recap, a leadership update, a translated summary, and a follow-up draft in minutes. The artifacts look organized enough to imply alignment even when the room never reached it. That is the new risk: AI can make coordination look finished before anyone has actually confirmed what was decided, who owns what, or what still needs to travel.
+With AI, a team can produce a tidy recap, a status update, a translated summary, and a follow-up draft in minutes. The artifacts look organized enough to imply alignment even when the room never reached it. That is the new risk: AI can make coordination look finished before anyone has actually confirmed what was decided, who owns what, or what still needs to travel.
 
 That makes communication one of the sharpest tests of high-agency work.
 
@@ -90,7 +90,7 @@ After a meeting, or before a handoff goes out, separate the material into four c
 That fourth category matters more than most teams admit. Many coordination failures happen because an interpretation gets smuggled into the recap as if it were a settled decision.
 
 For example:
-- “Team agreed to delay the launch” is a decision statement.
+- “Team agreed to delay the handoff until the setup checklist was complete” is a decision statement.
 - “Team seemed comfortable with the delay” is an interpretation.
 
 Those are not the same thing. A high-agency follow-up keeps them separate.
@@ -98,7 +98,7 @@ Those are not the same thing. A high-agency follow-up keeps them separate.
 ### Step 3. Translate for the audience without changing the record
 AI is especially useful once the message is structured.
 
-Use it to rewrite the same facts for the audience that needs them: leadership, engineering, operations, sales, or a cross-functional owner. But keep the meaning stable. If the message changes from version to version, the handoff has become theater.
+Use it to rewrite the same facts for the audience that needs them: support, implementation, operations, or the next owner. But keep the meaning stable. If the message changes from version to version, the handoff has become theater.
 
 ### Step 4. Verify owners and deadlines before sending
 A follow-up is not complete because it is polished. It is complete when the right people can act on it.
@@ -113,11 +113,11 @@ That is the difference between a clean summary and a usable handoff.
 
 ## A real-work scenario
 
-Imagine a cross-functional team that has already decided to narrow an upcoming launch.
+Imagine a customer onboarding team that has just discovered a setup gap after a service handoff.
 
-Product owns the scope call. Engineering owns the integration estimate. Operations needs the support implications. Sales needs a message that does not overpromise. Leadership needs a record that can be traced later.
+Customer success owns the relationship update. Implementation owns the setup checklist. Support needs the escalation history. Operations needs a message that stays traceable. The next owner needs to know what was promised, what was verified, and what remains open.
 
-The team does not need another planning memo. It needs a communication artifact that carries the decision forward.
+The team does not need another planning memo. It needs a communication artifact that carries the handoff forward.
 
 In a weak workflow, the raw notes go straight into a model. Minutes later, the team receives a clean summary that sounds complete but blurs the actual state of play.
 

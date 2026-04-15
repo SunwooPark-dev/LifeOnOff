@@ -66,25 +66,25 @@ Decide what matters, what is background, what the decision hinges on, and what u
 
 ## A real-work scenario
 
-Imagine a product leader asked to recommend whether the company should adopt a new AI feature in its enterprise platform.
+Imagine a consultant asked to prepare a recommendation for a client deciding whether to adopt a new AI-assisted research vendor for service-quality reviews.
 
-A weak process would ask AI whether the feature is important, skim a few agreeable sources, and write a recommendation from that material. The result would probably sound coherent and still be underpowered.
+A weak process would ask AI whether the vendor is important, skim a few agreeable sources, and write a recommendation from that material. The result would probably sound coherent and still be underpowered.
 
 A stronger process would look different.
 
-1. The leader defines the research job: this is decision preparation, not general curiosity.
-2. AI helps map the dimensions that matter: user demand, implementation cost, compliance risk, competitive pressure, support burden, and adoption friction.
-3. The team gathers evidence from the highest-rung sources available: vendor documentation for the feature claim, customer interviews for actual demand, compliance input for what cannot be ignored, and technical feasibility notes for what the team can really absorb.
-4. The source ladder is kept visible while the evidence is sorted. The vendor claim can inform the search, but it does not outrank customer evidence or compliance review.
-5. The recommendation is written with one unresolved uncertainty still explicit: the feature looks promising, but the compliance timeline and integration cost are not yet fully settled.
+1. The lead researcher defines the job: this is decision preparation, not general curiosity.
+2. AI helps map the dimensions that matter: researcher time saved, implementation cost, compliance risk, operational burden, and adoption friction.
+3. The team gathers evidence from the highest-rung sources available: vendor documentation for the capability claim, frontline staff interviews for actual demand, compliance input for what cannot be ignored, and technical feasibility notes for what the client can really absorb.
+4. The source ladder is kept visible while the evidence is sorted. The vendor claim can inform the search, but it does not outrank staff evidence or compliance review.
+5. The recommendation is written with one unresolved uncertainty still explicit: the workflow looks promising, but the compliance timeline and onboarding cost are not yet fully settled.
 
 That last sentence matters. It prevents the research from pretending to know more than it does.
 
 ## What the source ladder means in practice
 
 In this case, the ladder keeps the inputs honest:
-- vendor claims show what the feature is supposed to do,
-- customer evidence shows whether anyone wants it,
+- vendor claims show what the workflow is supposed to do,
+- user or staff evidence shows whether anyone wants it,
 - compliance input shows whether it is allowed,
 - technical input shows whether it is feasible,
 - AI helps organize the stack, but it cannot promote a claim beyond its evidence.

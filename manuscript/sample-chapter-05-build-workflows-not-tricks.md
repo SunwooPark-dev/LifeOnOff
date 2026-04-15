@@ -139,7 +139,7 @@ You do not need a giant automation project to begin.
 
 Start with one recurring task. One. The goal is not to redesign everything at once. The goal is to build a process that survives repetition.
 
-To make the rest of the chapter concrete, keep one recurring task in view: a Friday leadership brief built from scattered project notes, blockers, decisions, and stakeholder concerns.
+To make the rest of the chapter concrete, keep one recurring task in view: a weekly client update built from scattered notes, blockers, decisions, and stakeholder concerns. The same structure also works for a project lead or manager, but the client-facing version keeps the workflow broad enough to travel.
 
 The same structure also works for a solo contributor. A writer preparing a weekly newsletter can collect source links, ask AI for candidate outlines, review for accuracy and voice, choose the best opening, and keep the final version plus the note that explains why it worked.
 
@@ -226,13 +226,13 @@ Ask:
 
 Good workflows get better because they are used. They are not designed perfectly in advance.
 
-## A representative scenario: the Friday leadership brief
+## A representative scenario: the weekly client update
 
-Imagine a manager who sends a weekly leadership update every Friday.
+Imagine an independent consultant who sends a weekly client update every Friday.
 
 Before building a workflow, the update happens like this:
 
-On Thursday night, the manager gathers scattered notes, digs through messages, asks AI to “clean this up,” gets a neat draft, edits it lightly, and sends it out. The result is usually acceptable. It is also inconsistent.
+On Thursday night, the consultant gathers scattered notes, digs through messages, asks AI to “clean this up,” gets a neat draft, edits it lightly, and sends it out. The result is usually acceptable. It is also inconsistent.
 
 Sometimes the update overstates progress.
 Sometimes it buries risk.
@@ -245,12 +245,12 @@ The problem is that AI was used without a workflow.
 Now imagine the same task with an actual process.
 
 ### Inputs
-Every week, the manager collects:
+Every week, the consultant collects:
 - the three most important project notes,
 - any blocked items,
 - one or two metrics,
 - open decisions,
-- and any stakeholder concerns worth surfacing.
+- and any client concerns worth surfacing.
 
 ### Transformation
 AI turns that material into a first-pass structure:
@@ -260,14 +260,14 @@ AI turns that material into a first-pass structure:
 - and next steps.
 
 ### Review
-The manager checks:
+The consultant checks:
 - whether the risks are named honestly,
 - whether the status matches the evidence,
 - whether any claim is too strong,
-- and whether the update is safe for the actual audience.
+- and whether the update is safe for the actual client.
 
 ### Decision
-The manager decides what will be sent, what must be softened, and what needs a separate follow-up conversation.
+The consultant decides what will be sent, what must be softened, and what needs a separate follow-up conversation.
 
 ### Record
 The final update and the review notes are kept so next Friday starts with a better template.
@@ -280,7 +280,7 @@ The team also keeps a short provenance trail:
 
 What changed is not just efficiency.
 
-The manager now has a system that can survive a busy week, a change in tempo, or a new teammate. The workflow no longer depends on memory alone or on one clever prompt.
+The consultant now has a system that can survive a busy week, a change in tempo, or a substitute reviewer. The workflow no longer depends on memory alone or on one clever prompt.
 
 That is the real gain.
 
@@ -289,12 +289,12 @@ The same pattern applies to many recurring tasks:
 - a stakeholder recap,
 - a research summary,
 - a meeting follow-up,
-- a leadership memo,
+- a client memo,
 - a recurring client update.
 
 The details change. The architecture stays the same.
 
-A creator- or individual-contributor version looks similar. A freelance designer may run the same workflow each Friday: gather client notes, flag open approvals, summarize design risks, review tone before sending, and keep a record of what changed so the next update does not start from scratch. The work is smaller in scale than a leadership brief, but the architecture is the same: inputs, transformation, review, decision, and record.
+A creator- or individual-contributor version looks similar. A freelance designer or independent consultant may run the same workflow each Friday: gather client notes, flag open approvals, summarize deliverable risks, review tone before sending, and keep a record of what changed so the next update does not start from scratch. The work is smaller in scale than a larger team brief, but the architecture is the same: inputs, transformation, review, decision, and record.
 
 ## Where workflows go wrong
 
