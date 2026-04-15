@@ -1,0 +1,1 @@
+﻿Life AB Test MVP: formalize verification, validation, and render hardening

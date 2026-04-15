@@ -1,0 +1,24 @@
+Stabilize Life AB Test verification while hardening its local UI surface
+
+The Life AB Test MVP now uses a formalized in-process test suite,
+adds explicit input validation, separates UI orchestration from the
+simulation pipeline, and replaces string-based result rendering with
+DOM-node construction to reduce regression and injection risk.
+
+This keeps the current MVP behavior intact while improving confidence
+scoring semantics, input normalization safety, and maintainability of
+the app’s execution path.
+
+Constraint: Current Windows environment raises EPERM when relying on `node --test` process spawning directly
+Constraint: Must preserve the local MVP flow and avoid adding unnecessary dependencies
+Rejected: Vitest migration | unnecessary dependency increase for the current local MVP
+Rejected: Keep UI string-based rendering with escaping only | weaker long-term safety than DOM-node construction
+Confidence: high
+Scope-risk: moderate
+Reversibility: clean
+Directive: Keep future UI output on the DOM/service-layer path and avoid reintroducing direct HTML string composition for user-controlled data
+Tested: `npm run test`
+Tested: `npm run build`
+Tested: `npm run generate`
+Tested: Local smoke on `server.js` (HTTP 200)
+Not-tested: Cross-browser visual differences and long-session storage edge cases
