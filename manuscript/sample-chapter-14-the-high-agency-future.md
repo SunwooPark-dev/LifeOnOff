@@ -22,6 +22,8 @@ Those are not abstract categories.
 
 They are practical decisions about where machine help belongs, where human attention becomes more valuable, and where the use of AI creates costs that are not worth the speed.
 
+In plain language, high-agency work means you still decide what to hand off, what to think through yourself, and what you are willing to own.
+
 That is the final frame of this book.
 
 ## Reject the easy stories
