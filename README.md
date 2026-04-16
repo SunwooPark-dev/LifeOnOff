@@ -2,6 +2,8 @@
 
 이 저장소는 원래 AI 출판 프로젝트 워크스페이스였고, 현재는 그 위에 **Life AB Test** 로컬 MVP가 추가되어 있습니다.
 
+기여 기본값은 **내부 편집/개발 레인**입니다. 외부 상업화·출판 패키징 작업은 명시적으로 재개되기 전까지 보류 상태로 간주합니다.
+
 ## 현재 활성 레인
 - **책 프로젝트 기준 현재 활성 레인:** 내부용 편집/개발
 - **외부 상업화/출판 패키징:** 보류
@@ -11,6 +13,8 @@
 
 ## Life AB Test 한 줄 정의
 사용자가 두 가지 선택지 A/B를 입력하면, 동일 baseline과 공통 노이즈 위에서 미래 경로를 시뮬레이션해 비교 리포트를 보여주는 인생 AB 테스트 시뮬레이션 앱.
+
+실제로 바로 실행할 수 있는 제품 표면은 이 Life AB Test 앱이며, 기존 책 관련 문서는 내부 개발 참고 자산으로 함께 유지됩니다.
 
 ## 현재 포함된 MVP 기능
 - A/B 선택지 입력 폼
@@ -26,7 +30,7 @@
 
 ## 실행 방법
 ```bash
-npm run start
+npm start
 ```
 브라우저에서 `http://localhost:3000` 접속
 
@@ -45,7 +49,7 @@ npm run generate
 - `src/core/report.js` - 리포트 / JSON appendix / merged markdown
 - `src/core/storage.js` - 로컬 저장
 - `src/ui/app.js` - UI 로직
-- `scripts/run-tests.mjs` - 테스트 러너
+- `tests/index.test.js` - 테스트 엔트리
 - `scripts/generate-sample-run.mjs` - 샘플 산출물 생성
 - `generated/` - 샘플 merged markdown / JSON appendix / PDF-ready guide
 
