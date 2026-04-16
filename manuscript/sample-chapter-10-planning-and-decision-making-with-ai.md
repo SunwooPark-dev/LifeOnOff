@@ -170,7 +170,12 @@ A stronger workflow would look different.
 4. AI then helps build a tradeoff table for the three main paths.
 5. The leader runs a premortem on the currently favored option: reducing scope while keeping the original date.
 6. The premortem reveals two likely failure modes: the remaining workflow still depends on a fragile backend piece, and sales may continue implying broader capability than the launch will actually include.
-7. The leader adjusts the recommendation. The plan becomes: narrow the launch to the most reliable workflow, lock a stricter definition of ready, and pair the decision with a sales communication reset.
+
+Before the review deck is finalized, the leader uses AI to turn those risks into one sharper table: dependency, likely break point, who absorbs the pain, and what signal would show the “reduced-scope” plan is actually unstable. In the prep meeting, engineering points to the same backend dependency and says that if it slips by even a week, the support team will absorb the blast radius on the launch date anyway. Sales then admits that two enterprise prospects are already speaking as if the adjacent workflow is included. The room gets quieter because the tradeoff stops sounding strategic and starts sounding concrete: keep the date and risk a larger trust hit later, or narrow the promise now and absorb the pain in a controlled way.
+
+That is the moment the recommendation changes. The issue is no longer “Which option sounds balanced on a slide?” It becomes “Which pain are we willing to own in front of other people?”
+
+7. The leader adjusts the recommendation. The plan becomes: narrow the launch to the most reliable workflow, lock a stricter definition of ready, pair the decision with a sales communication reset, and explicitly record that the cost of this path is a harder near-term stakeholder conversation in exchange for lower trust damage after launch.
 8. The final memo is written in owned language: this is the call, this is the cost, this is why it is still the best option.
 
 Notice what AI did here.
