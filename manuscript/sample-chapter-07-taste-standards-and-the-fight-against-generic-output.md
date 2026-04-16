@@ -304,6 +304,12 @@ Fourth, the manager reviews in passes. Fit: does this help the audience decide? 
 | --- | --- |
 | “The initiative is tracking behind plan, but alignment remains strong. Dependencies are being managed and next steps are in progress.” | “The initiative is behind because the decision is still open. This week we narrow scope to protect the date, and I am owning the tradeoff instead of smoothing it over.” |
 
+The same standard shows up in smaller non-writing artifacts too:
+
+| Generic handoff note | Owned handoff note |
+| --- | --- |
+| “Project is moving forward. Team is aligned, and open items are being tracked for follow-up.” | “Decision still open: cut scope or miss the date. Owner: project lead. Tradeoff: keep full scope or protect the date. Risk: the update goes out before the decision is made.” |
+
 Fifth, the manager forces a comparison and notices that the most polished version is also the least useful because it smooths out the core tension.
 
 Finally, the manager rewrites the recommendation sentence and opening paragraph in human-owned language.

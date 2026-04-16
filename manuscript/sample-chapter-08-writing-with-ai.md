@@ -67,6 +67,11 @@ A better pass starts with the human judgment:
 4. AI helps test three openings, tighten repetition, and cut vague phrasing.
 5. The writer does the final courage check: does the memo actually say the hard thing?
 
+You can see the difference in one paragraph:
+
+- Weak version: "To stay aligned with our priorities, we should narrow the roadmap and focus on the items with the highest customer value this quarter."
+- Revised version: "We are cutting two of the three features because shipping one workflow that works is better than announcing three that all land half-finished. That will disappoint the teams who pushed for them, but the memo should say that tradeoff plainly instead of hiding it behind 'alignment' language."
+
 That is the right division of labor. The model speeds the revision; the human owns the meaning.
 
 ## Where AI helps most
