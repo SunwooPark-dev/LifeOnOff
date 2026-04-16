@@ -1,7 +1,7 @@
 # Ch.12 Reserve Micro-Pass Report — What the Same Scenario Proves
 
 ## Status
-Locally verified; commit pending.
+Completed.
 
 This report records the **actual** scope for a **Ch.12-only reserve micro-pass** and does not claim Part IV-wide completion.
 

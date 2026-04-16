@@ -1,7 +1,7 @@
 # Scene-Level Proof Report — The High-Agency AI Worker
 
 ## Status
-Verified locally; commit pending.
+Completed.
 
 This report is intentionally conservative: it records the **actual** scope and the local verification evidence for this scene-level proof tranche without overclaiming broader manuscript completion.
 

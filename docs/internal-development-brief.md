@@ -97,6 +97,9 @@ Use this repository as an internal development kit for:
 - `docs/focused-reread-notes-part-iii.md` ? completed Part III follow-up reread findings
 - `docs/focused-reread-notes-part-iv.md` ? completed Part IV follow-up reread findings
 - `docs/focused-reread-summary.md` ? focused reread decision showing Revision Batch 1 closed the original P1 issues
+- `docs/post-cleanup-residual-risk-synthesis.md` — current residual-risk control sheet after the smaller cleanup lanes landed
+- `docs/ch10-scene-proof-micro-tranche-report.md` — bounded Chapter 10 proof-fix execution record
+- `docs/ch10-scene-proof-reread-note.md` — post-pass reread note confirming the Chapter 10 fix was sufficient for the targeted issue
 - Completed draft files:
   - `manuscript/sample-chapter-08-writing-with-ai.md`
   - `manuscript/sample-chapter-09-research-with-ai.md`
@@ -111,9 +114,17 @@ Use this repository as an internal development kit for:
   - `manuscript/sample-chapter-14-the-high-agency-future.md`
 
 ## Recommended next internal writing moves
-1. **Choose one smaller cleanup lane next**: cold-reader/plain-language, case-world diversification, or scene-level proof
-2. **Run that narrower pass against the focused reread findings** instead of opening a new full-batch rewrite immediately
+1. **Use `docs/post-cleanup-residual-risk-synthesis.md` plus `docs/ch10-scene-proof-reread-note.md` as the current control pair**; the previously queued smaller cleanup lanes and the bounded Chapter 10 follow-up have already landed locally.
+2. **Do not open another editorial tranche until a fresh reread surfaces a new chapter-bounded need.**
 3. Reopen commercialization artifacts only after the manuscript direction feels stable enough to pitch
+
+## Hold gate for further editorial work
+Until a new chapter-bounded reread signal appears, treat the current lane as **hold / observe**, not **open / revise**.
+
+That means:
+- do **not** open a new multi-chapter reread packet from historical concerns alone
+- do **not** reopen Chapter 10 without a fresh failure signal
+- do **not** promote watch items back into must-fix work without new passage-level evidence
 
 ## External-track notes for future use
 - `marketing/submission-ready-publisher-packet.md` remains a useful future packaging template

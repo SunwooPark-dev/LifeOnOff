@@ -1,7 +1,7 @@
 # Cold-Reader / Plain-Language Report — The High-Agency AI Worker
 
 ## Status
-Locally verified; commit pending.
+Completed.
 
 This report records the **actual** scope and local verification evidence for a **Ch.14-only cold-reader / plain-language micro-tranche** without claiming broader Part IV strengthening.
 

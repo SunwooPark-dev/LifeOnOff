@@ -35,11 +35,8 @@ These are better treated as a later cleanup or cold-reader pass, not as proof th
 A new full Revision Batch 2 is **not required right now** to close the original P1 contract from `docs/internal-readthrough-summary.md`.
 
 ## Recommended next queued action
-1. **Commit Revision Batch 1 and its focused reread evidence as truthful, reviewable slices**
-2. After that, choose a smaller follow-up lane such as:
-   - cold-reader / plain-language pass
-   - case-world diversification pass
-   - scene-level proof pass
+1. Treat Revision Batch 1 plus the smaller follow-up lanes as landed historical slices.
+2. Use `docs/post-cleanup-residual-risk-synthesis.md` to choose the next narrowly bounded tranche instead of reopening the old lane-selection step.
 
 ## Verification summary
 - Focused reread packet exists

@@ -4,7 +4,9 @@
 Re-read only the chapters revised in Revision Batch 1 and decide whether the batch closed the highest-priority issues.
 
 ## Status
-Ready for review.
+Completed.
+
+This packet is now a historical scope definition for the focused reread that fed `docs/focused-reread-summary.md`.
 
 ## Scope rule
 This is **not** a whole-manuscript reread.

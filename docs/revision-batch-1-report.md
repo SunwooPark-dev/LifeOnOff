@@ -55,7 +55,7 @@ Completed.
 - `docs/focused-reread-summary.md` concludes that the remaining issues are below the original P1 threshold
 
 ## Next queued action
-**Choose a smaller cleanup lane** ? cold-reader/plain-language, case-world diversification, or scene-level proof ? rather than opening a new full Revision Batch 2 immediately.
+Treat the smaller cleanup lanes as completed follow-up work and use `docs/post-cleanup-residual-risk-synthesis.md` to open the next chapter-bounded tranche only if current evidence justifies it.
 
 ## Remaining risks
 - The manuscript still leans more on frameworks than scenes in a few places
