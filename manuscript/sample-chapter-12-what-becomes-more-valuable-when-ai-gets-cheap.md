@@ -107,6 +107,8 @@ The first manager uses AI to move quickly. They generate a summary of customer f
 
 The second manager also uses AI, but differently. They use it to compare customer feedback patterns, surface missing questions, generate alternate recommendation structures, and test objections. Then they do the harder human work. They talk to engineering about the real dependency, not just the reported timeline. They pressure-test whether the launch date is symbolic or actually tied to a meaningful commercial event. They identify the hidden cost of delay. They cut the polished paragraph that says nothing new. They write the recommendation sentence themselves, in their own voice, so the tradeoff is visible instead of implied.
 
+They recast the decision as a choice between protecting a date and protecting a launch the team can still defend. They leave the thin evidence visible, cut the language that softens the tradeoff, and frame the recommendation around what the team is actually prepared to stand behind.
+
 That is why the six scarce capacities matter together.
 
 - Judgment decides what deserves belief and what needs more checking.
