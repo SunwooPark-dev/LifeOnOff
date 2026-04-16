@@ -63,7 +63,7 @@ This chapter uses a simple pre-generation grammar:
 4. **Constraints**
 5. **Stakes**
 
-That grammar is reusable because it travels across domains. It works before a draft, before a research pass, before a planning session, before a meeting brief, and before a recommendation memo. It is not a prompt trick. It is a way to make the work legible before asking a system to accelerate it.
+That grammar travels across domains. It works before drafting, research, planning, or coordination because it makes the work legible before a system starts accelerating it.
 
 If you only remember one practice from this chapter, make it this:
 
@@ -342,9 +342,9 @@ It may delay generation by a few minutes. It prevents hours or days of downstrea
 
 ## Why this chapter sits first in Part II
 
-The five-part brief is the upstream input for the rest of Part II. In writing it clarifies what a draft is supposed to accomplish before language shows up. In research it separates orientation from verification. In planning it makes the real decision and tradeoff visible before scenarios multiply. In coordination it defines what the brief, recap, or update is supposed to change in other people.
+The five-part brief sits upstream of the rest of Part II. It forces the job to become legible before drafting, research, planning, or coordination begin.
 
-The grammar stays the same even when the domain changes. That is why this chapter comes first.
+The domains change. The discipline does not. That is why this chapter comes first.
 
 ## Where people still get into trouble
 
