@@ -36,7 +36,7 @@ A new full Revision Batch 2 is **not required right now** to close the original 
 
 ## Recommended next queued action
 1. Treat Revision Batch 1 plus the smaller follow-up lanes as landed historical slices.
-2. Use `docs/post-cleanup-residual-risk-synthesis.md` to choose the next narrowly bounded tranche instead of reopening the old lane-selection step.
+2. Treat `docs/post-cleanup-residual-risk-synthesis.md` as a historical/control reference, and open no new tranche unless a fresh chapter-bounded reread signal appears.
 
 ## Verification summary
 - Focused reread packet exists
