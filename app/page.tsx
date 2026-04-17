@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { createDefaultInput } from "../lib/possibility-explorer/engine";
+import { updateDraftOption, updateDraftQuestion } from "../lib/possibility-explorer/input-draft";
 import type { PossibilityExplorerInput } from "../lib/possibility-explorer/types";
 import { canRenderVisualSummary, getVisualSummaryWidth } from "../lib/possibility-explorer/visual-gating";
 import { buildWorkspaceState } from "../lib/possibility-explorer/workspace";
@@ -174,25 +175,7 @@ export default function Home() {
   const result = workspace.result;
 
   const updateOption = (index: number, key: "label" | "details", value: string) => {
-    setInput((current) => {
-      const options = current.options.map((option, optionIndex) =>
-        optionIndex === index
-          ? {
-              ...option,
-              id:
-                key === "label" && value.trim()
-                  ? value
-                      .toLowerCase()
-                      .replace(/[^a-z0-9]+/g, "-")
-                      .replace(/^-+|-+$/g, "")
-                      .slice(0, 24) || option.id
-                  : option.id,
-              [key]: value,
-            }
-          : option,
-      );
-      return { ...current, options };
-    });
+    setInput((current) => updateDraftOption(current, index, key, value));
   };
 
   const addOption = () => {
@@ -242,7 +225,7 @@ export default function Home() {
             <h2 style={styles.sectionTitle}>Decision workspace</h2>
             <div style={styles.field}>
               <label style={styles.label}>Question</label>
-              <textarea style={styles.textarea} value={input.question} onChange={(event) => setInput((current) => ({ ...current, question: event.target.value }))} />
+              <textarea style={styles.textarea} value={input.question} onChange={(event) => setInput((current) => updateDraftQuestion(current, event.target.value))} />
             </div>
             <div style={styles.gridTwo}>
               <div style={styles.field}>
