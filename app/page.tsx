@@ -1,8 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { buildPossibilityExplorerResult, createDefaultInput } from "../lib/possibility-explorer/engine";
+import { createDefaultInput } from "../lib/possibility-explorer/engine";
 import type { PossibilityExplorerInput } from "../lib/possibility-explorer/types";
+import { canRenderVisualSummary, getVisualSummaryWidth } from "../lib/possibility-explorer/visual-gating";
+import { buildWorkspaceState } from "../lib/possibility-explorer/workspace";
 
 const styles = {
   page: {
@@ -168,7 +170,8 @@ function cloneDefaults(): PossibilityExplorerInput {
 
 export default function Home() {
   const [input, setInput] = useState<PossibilityExplorerInput>(() => cloneDefaults());
-  const result = useMemo(() => buildPossibilityExplorerResult(input), [input]);
+  const workspace = useMemo(() => buildWorkspaceState(input), [input]);
+  const result = workspace.result;
 
   const updateOption = (index: number, key: "label" | "details", value: string) => {
     setInput((current) => {
@@ -298,8 +301,29 @@ export default function Home() {
               <p style={styles.statusText}>{result.summary}</p>
               {result.recommendationSummary ? <p style={{ ...styles.miniText, marginTop: 10 }}>Recommendation: {result.recommendationSummary}</p> : null}
               {result.refusalReason ? <p style={{ ...styles.miniText, marginTop: 10 }}>Boundary: {result.refusalReason}</p> : null}
+              {workspace.inputWarnings.length ? (
+                <ul style={{ ...styles.list, marginTop: 10 }}>
+                  {workspace.inputWarnings.map((warning) => (
+                    <li key={warning.code}>{warning.message}</li>
+                  ))}
+                </ul>
+              ) : null}
+              {workspace.inputErrors.length ? (
+                <ul style={{ ...styles.list, marginTop: 10 }}>
+                  {workspace.inputErrors.map((message, index) => (
+                    <li key={`${message}-${index}`}>{message}</li>
+                  ))}
+                </ul>
+              ) : null}
+              {workspace.outputErrors.length ? (
+                <ul style={{ ...styles.list, marginTop: 10 }}>
+                  {workspace.outputErrors.map((message, index) => (
+                    <li key={`${message}-${index}`}>{message}</li>
+                  ))}
+                </ul>
+              ) : null}
               <p style={{ ...styles.miniText, marginTop: 10 }}>
-                State: <strong>{result.runState}</strong> · Visual gate: <strong>{result.visualGate.allowed ? "open" : "blocked"}</strong>
+                State: <strong>{result.runState}</strong> · Validation: <strong>{workspace.validationState}</strong> · Visual gate: <strong>{result.visualGate.allowed ? "open" : "blocked"}</strong>
               </p>
             </div>
 
@@ -363,11 +387,11 @@ export default function Home() {
                   <p style={styles.miniText}>
                     Traceability → evidence: {assessment.evidenceRefs.join(", ")} · assumptions: {assessment.assumptionRefs.join(", ")}
                   </p>
-                  {result.visualGate.allowed && assessment.score !== null ? (
+                  {canRenderVisualSummary(result, assessment) ? (
                     <div style={styles.visualCard}>
                       <strong>Visual summary</strong>
                       <div style={styles.barTrack}>
-                        <div style={{ ...styles.barFill, width: `${Math.max(8, Math.min(100, numericScore * 10))}%` }} />
+                        <div style={{ ...styles.barFill, width: getVisualSummaryWidth(numericScore) }} />
                       </div>
                       <p style={styles.miniText}>Rounded score: {numericScore.toFixed(1)} / 10</p>
                     </div>
