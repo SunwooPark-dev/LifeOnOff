@@ -86,7 +86,7 @@ function includesAny(source: string, keywords: readonly string[]) {
 function deriveCriteria(question: string, options: ChoiceOptionInput[], outcomes: string, constraints: string) {
   const corpus = `${question} ${outcomes} ${constraints} ${options.map((option) => `${option.label} ${option.details}`).join(" ")}`.toLowerCase();
   const selected = CRITERION_LIBRARY.filter((criterion) => includesAny(corpus, criterion.keywords));
-  return (selected.length >= 2 ? selected : CRITERION_LIBRARY.slice(0, 3)).slice(0, 4);
+  return selected.slice(0, 4);
 }
 
 function buildProvenance(input: PossibilityExplorerInput, criteriaIds: string[]) {
@@ -127,6 +127,13 @@ function buildProvenance(input: PossibilityExplorerInput, criteriaIds: string[])
       label: `${criterionId} heuristic`,
       detail: `The score for ${criterionId} uses lightweight heuristics from the written option descriptions rather than external evidence.`,
     });
+  });
+
+  refs.push({
+    id: "assumption-criteria-gap",
+    kind: "assumption",
+    label: "Insufficient criteria signal",
+    detail: "The comparison stayed structure-only because the input did not surface enough trustworthy criteria for ranking.",
   });
 
   return refs;
@@ -205,6 +212,13 @@ export function buildPossibilityExplorerResult(input: PossibilityExplorerInput):
   const criteriaIds = criteriaBlueprint.map((criterion) => criterion.id);
   const normalizedWeights = normalizeWeights(criteriaIds, input.criteriaWeights);
   const provenance = buildProvenance(input, criteriaIds);
+  const warnings: string[] = [];
+  const nextQuestions: string[] = [];
+  const sharedEvidenceRefs = [
+    "fact-question",
+    ...(input.preferredOutcomes.trim() ? ["fact-outcomes"] : []),
+    ...(input.constraints.trim() ? ["fact-constraints"] : []),
+  ];
 
   const criteria: Criterion[] = criteriaBlueprint.map((criterion) => ({
     id: criterion.id,
@@ -212,7 +226,7 @@ export function buildPossibilityExplorerResult(input: PossibilityExplorerInput):
     description: criterion.description,
     weight: normalizedWeights[criterion.id],
     weightConfirmed: input.weightsConfirmed,
-    evidenceRefs: ["fact-question", "fact-outcomes", "fact-constraints"],
+    evidenceRefs: sharedEvidenceRefs,
     assumptionRefs: [`assumption-${criterion.id}`],
   }));
 
@@ -228,6 +242,9 @@ export function buildPossibilityExplorerResult(input: PossibilityExplorerInput):
       whatToDoNow: blocked.state === "refusal" ? "Reframe the question as a non-high-stakes personal choice or consult a qualified professional." : "Adjust the question/options so the run fits the MVP contract.",
       uncertaintyNote: "No ranking was produced.",
       refusalReason: blocked.state === "refusal" ? blocked.reason : null,
+      weightsConfirmed: input.weightsConfirmed,
+      warnings: [blocked.reason],
+      nextQuestions: blocked.state === "refusal" ? ["Can you reframe this as an ordinary personal daily choice?"] : ["Which input field needs clarification before rerunning?"],
       criteria,
       provenance,
       assessments: [],
@@ -239,6 +256,10 @@ export function buildPossibilityExplorerResult(input: PossibilityExplorerInput):
   }
 
   if (criteria.length < 2) {
+    warnings.push("Not enough signal was found to draft two reliable criteria.");
+    nextQuestions.push("What specific tradeoff matters most for this decision?");
+    nextQuestions.push("What detail would make the best option clearly better or worse?");
+
     return {
       schemaVersion: "v1",
       runState: "downgraded",
@@ -250,6 +271,9 @@ export function buildPossibilityExplorerResult(input: PossibilityExplorerInput):
       whatToDoNow: "Clarify the decision and rerun.",
       uncertaintyNote: "Ranking withheld because the comparison structure is too weak.",
       refusalReason: null,
+      weightsConfirmed: input.weightsConfirmed,
+      warnings,
+      nextQuestions,
       criteria,
       provenance,
       assessments: input.options.map((option) => ({
@@ -260,7 +284,7 @@ export function buildPossibilityExplorerResult(input: PossibilityExplorerInput):
         whatCouldChange: "Provide stronger desired outcomes or constraints.",
         nextStep: "Add details before trying to rank this option.",
         evidenceRefs: [`fact-option-${option.id}`],
-        assumptionRefs: [],
+        assumptionRefs: ["assumption-criteria-gap"],
       })),
       visualGate: {
         allowed: false,
@@ -294,6 +318,9 @@ export function buildPossibilityExplorerResult(input: PossibilityExplorerInput):
   const ranked = [...assessments].filter((item) => item.score !== null).sort((left, right) => (right.score ?? 0) - (left.score ?? 0));
 
   if (!input.weightsConfirmed) {
+    warnings.push("Weights are still provisional, so final ranking remains blocked.");
+    nextQuestions.push("Which criterion matters most right now?");
+
     return {
       schemaVersion: "v1",
       runState: "awaiting-user-weights",
@@ -305,6 +332,9 @@ export function buildPossibilityExplorerResult(input: PossibilityExplorerInput):
       whatToDoNow: "Review the weights, check the confirmation box, and rerun the analysis.",
       uncertaintyNote: "Ranking may change when weights change.",
       refusalReason: null,
+      weightsConfirmed: input.weightsConfirmed,
+      warnings,
+      nextQuestions,
       criteria,
       provenance,
       assessments,
@@ -324,6 +354,12 @@ export function buildPossibilityExplorerResult(input: PossibilityExplorerInput):
     orderingGap !== null && orderingGap < 0.8
       ? "Top options are close; ranking may change if assumptions or weights change."
       : "This ranking is still assumption-sensitive because the MVP uses lightweight heuristics rather than external evidence.";
+  const questions = orderingGap !== null && orderingGap < 0.8
+    ? ["What new evidence would separate the top two options?"]
+    : ["Which downside should you stress-test before acting on this recommendation?"];
+  const outputWarnings = orderingGap !== null && orderingGap < 0.8
+    ? ["Ranking gap is small, so the top options remain close."]
+    : [];
 
   return {
     schemaVersion: "v1",
@@ -343,6 +379,9 @@ export function buildPossibilityExplorerResult(input: PossibilityExplorerInput):
     whatToDoNow: bestOption ? `Choose ${bestOption.label} if the current tradeoffs feel right, or adjust the weights before acting.` : "Review the option details and try again.",
     uncertaintyNote,
     refusalReason: null,
+    weightsConfirmed: input.weightsConfirmed,
+    warnings: outputWarnings,
+    nextQuestions: questions,
     criteria,
     provenance,
     assessments,

@@ -3,13 +3,18 @@ import { describe, expect, it } from "vitest";
 import { decisionInputSchema, parseDecisionInput } from "@/lib/schemas/decision-input";
 
 const validInput = {
-  title: "Should I take job A or stay freelance?",
-  optionA: "Accept the full-time role",
-  optionB: "Continue freelancing",
-  context: "I value income stability but also flexibility.",
-  constraints: ["Need enough income to cover rent", "Cannot relocate this year"],
-  priorities: ["financial stability", "flexibility", "career growth"],
-  timeHorizon: "6m",
+  question: "What should I do for dinner tonight?",
+  options: [
+    { id: "cook-at-home", label: "Cook at home", details: "Cheap and quick because the ingredients are already here." },
+    { id: "go-out", label: "Go out nearby", details: "More variety but costs more and takes longer." },
+  ],
+  preferredOutcomes: "I want something satisfying that does not wreck my budget.",
+  constraints: "I am a little tired and do not want a long commute.",
+  criteriaWeights: {
+    cost: 50,
+    energy: 50,
+  },
+  weightsConfirmed: false,
 } as const;
 
 describe("decisionInputSchema", () => {
@@ -17,61 +22,69 @@ describe("decisionInputSchema", () => {
     expect(decisionInputSchema.parse(validInput)).toEqual(validInput);
   });
 
-  it("rejects overlong titles, options, and oversized lists", () => {
+  it("rejects too few or too many options", () => {
     expect(() =>
       decisionInputSchema.parse({
         ...validInput,
-        title: "x".repeat(121),
+        options: [validInput.options[0]],
       }),
     ).toThrow();
 
     expect(() =>
       decisionInputSchema.parse({
         ...validInput,
-        optionA: "x".repeat(201),
-      }),
-    ).toThrow();
-
-    expect(() =>
-      decisionInputSchema.parse({
-        ...validInput,
-        constraints: Array.from({ length: 21 }, (_, index) => `constraint-${index}`),
-      }),
-    ).toThrow();
-
-    expect(() =>
-      decisionInputSchema.parse({
-        ...validInput,
-        priorities: Array.from({ length: 21 }, (_, index) => `priority-${index}`),
+        options: Array.from({ length: 6 }, (_, index) => ({
+          id: `option-${index + 1}`,
+          label: `Option ${index + 1}`,
+          details: "detail",
+        })),
       }),
     ).toThrow();
   });
 
-  it("trims scalar strings and removes blank list items", () => {
+  it("trims scalar strings and option fields", () => {
     const parsed = decisionInputSchema.parse({
       ...validInput,
-      title: "  Should I take job A or stay freelance?  ",
-      optionA: " Accept the full-time role ",
-      optionB: " Continue freelancing ",
-      context: " I value income stability but also flexibility. ",
-      constraints: [" Need enough income to cover rent ", "   ", " Cannot relocate this year "],
-      priorities: [" financial stability ", "", " flexibility "],
+      question: "  What should I do for dinner tonight?  ",
+      preferredOutcomes: " I want something satisfying that does not wreck my budget. ",
+      constraints: " I am a little tired and do not want a long commute. ",
+      options: [
+        { id: "cook-at-home", label: " Cook at home ", details: " Cheap and quick. " },
+        { id: "go-out", label: " Go out nearby ", details: " More variety. " },
+      ],
     });
 
     expect(parsed).toEqual({
       ...validInput,
-      priorities: ["financial stability", "flexibility"],
+      options: [
+        { id: "cook-at-home", label: "Cook at home", details: "Cheap and quick." },
+        { id: "go-out", label: "Go out nearby", details: "More variety." },
+      ],
     });
   });
 
-  it("rejects identical options after normalization", () => {
+  it("rejects duplicate option labels after normalization", () => {
     expect(() =>
       decisionInputSchema.parse({
         ...validInput,
-        optionA: " Stay   freelance ",
-        optionB: "stay freelance",
+        options: [
+          { id: "option-a", label: " Stay home ", details: "Short walk." },
+          { id: "option-b", label: "stay   home", details: "Short walk." },
+        ],
       }),
     ).toThrow(/distinct/i);
+  });
+
+  it("rejects duplicate option ids after normalization", () => {
+    expect(() =>
+      decisionInputSchema.parse({
+        ...validInput,
+        options: [
+          { id: " option-a ", label: "Stay home", details: "Short walk." },
+          { id: "option-a", label: "Go out", details: "More variety." },
+        ],
+      }),
+    ).toThrow(/ids/i);
   });
 
   it("rejects unknown keys", () => {
@@ -83,45 +96,54 @@ describe("decisionInputSchema", () => {
     ).toThrow();
   });
 
-  it("rejects invalid timeHorizon", () => {
+  it("rejects invalid weight values", () => {
     expect(() =>
       decisionInputSchema.parse({
         ...validInput,
-        timeHorizon: "1y",
+        criteriaWeights: {
+          cost: -10,
+        },
       }),
     ).toThrow();
   });
 });
 
 describe("parseDecisionInput", () => {
-  it("returns warnings for weak but schema-valid input", () => {
+  it("returns warnings for thin but schema-valid input", () => {
     const result = parseDecisionInput({
       ...validInput,
-      context: "Not sure.",
-      constraints: [],
-      priorities: [],
+      question: "Dinner?",
+      preferredOutcomes: "",
+      constraints: "",
+      options: [
+        { id: "a", label: "A", details: "" },
+        { id: "b", label: "B", details: "" },
+      ],
     });
 
     expect(result.success).toBe(true);
     expect(result.warnings.map((warning) => warning.code).sort()).toEqual([
-      "context_too_short",
-      "input_is_thin",
+      "context_is_thin",
+      "question_is_thin",
     ]);
   });
 
-  it("returns only input_is_thin when context is blank but structurally valid", () => {
+  it("returns only context_is_thin when question is already strong enough", () => {
     const result = parseDecisionInput({
       ...validInput,
-      context: "   ",
-      constraints: ["Need enough income to cover rent"],
-      priorities: ["financial stability"],
+      preferredOutcomes: "",
+      constraints: "",
+      options: [
+        { id: "cook-at-home", label: "Cook at home", details: "" },
+        { id: "go-out", label: "Go out nearby", details: "" },
+      ],
     });
 
     expect(result.success).toBe(true);
     expect(result.warnings).toEqual([
       {
-        code: "input_is_thin",
-        message: "Input is thin; output should emphasize uncertainty and validation questions.",
+        code: "context_is_thin",
+        message: "Context is thin; prefer a downgrade or stronger uncertainty messaging.",
       },
     ]);
   });
@@ -129,8 +151,10 @@ describe("parseDecisionInput", () => {
   it("returns no warnings on invalid input", () => {
     const result = parseDecisionInput({
       ...validInput,
-      optionA: "Continue freelancing",
-      optionB: " continue freelancing ",
+      options: [
+        { id: "a", label: "Same option", details: "" },
+        { id: "b", label: " same  option ", details: "" },
+      ],
     });
 
     expect(result.success).toBe(false);

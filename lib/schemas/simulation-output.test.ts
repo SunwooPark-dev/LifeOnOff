@@ -3,42 +3,81 @@ import { describe, expect, it } from "vitest";
 import { simulationOutputSchema } from "@/lib/schemas/simulation-output";
 
 const validOutput = {
-  optionA: {
-    summary: "Higher stability, lower flexibility.",
-    assumptions: ["Salary meets current living costs"],
-    nearTerm: ["Routine becomes more structured"],
-    midTerm: ["Learning and income become more predictable"],
-    longTerm: ["Career path may become clearer but less flexible"],
-    upside: ["Predictable income", "Professional structure"],
-    downside: ["Reduced autonomy"],
-    hiddenCosts: ["Harder to reverse if the role is a poor fit"],
-    reversibility: "medium",
-    regretRisk: "medium",
-    confidenceNotes: ["More information about the role would improve confidence"],
-    questionsToValidate: ["What is the expected workload after month 3?"],
-  },
-  optionB: {
-    summary: "Higher flexibility, less predictable income.",
-    assumptions: ["Freelance pipeline remains active"],
-    nearTerm: ["Autonomy remains high"],
-    midTerm: ["Income volatility may continue"],
-    longTerm: ["Optionality stays open but stability may lag"],
-    upside: ["Schedule control", "Path flexibility"],
-    downside: ["Revenue uncertainty"],
-    hiddenCosts: ["Decision fatigue and self-management overhead"],
-    reversibility: "easy",
-    regretRisk: "medium",
-    confidenceNotes: ["Client pipeline quality is still uncertain"],
-    questionsToValidate: ["What does my real 3-month pipeline look like?"],
-  },
-  comparison: {
-    biggestTradeoff: "Stability versus autonomy",
-    asymmetricRisk: "Option B has more income volatility risk",
-    likelyAdvantageA: "More predictable finances",
-    likelyAdvantageB: "More flexibility and optionality",
-    suggestedNextStep: "Validate salary realism and freelance pipeline before deciding",
-  },
+  schemaVersion: "v1",
+  runState: "analysis-complete",
+  statusTitle: "Analysis complete",
+  summary: "Cook at home is the current best-fit choice for this daily decision.",
+  recommendationSummary: "Cook at home leads over Go out nearby based on your confirmed weights.",
+  whyThisConclusion: "Cook at home scores highest across the confirmed criteria.",
+  whatChangesTheResult: "Re-weight the criteria or add stronger option details if a different tradeoff should dominate.",
+  whatToDoNow: "Choose Cook at home if the current tradeoffs feel right.",
+  uncertaintyNote: "Top options are close; ranking may change if assumptions or weights change.",
+  refusalReason: null,
+  weightsConfirmed: true,
   warnings: [],
+  nextQuestions: ["What new evidence would separate the top two options?"],
+  criteria: [
+    {
+      id: "cost",
+      label: "Cost / friction",
+      description: "How much time, money, or coordination the option consumes.",
+      weight: 50,
+      weightConfirmed: true,
+      evidenceRefs: ["fact-question"],
+      assumptionRefs: ["assumption-cost"],
+    },
+    {
+      id: "energy",
+      label: "Energy fit",
+      description: "How realistic the option is given today's energy and effort budget.",
+      weight: 50,
+      weightConfirmed: true,
+      evidenceRefs: ["fact-question"],
+      assumptionRefs: ["assumption-energy"],
+    },
+  ],
+  provenance: [
+    {
+      id: "fact-question",
+      kind: "fact",
+      label: "User question",
+      detail: "What should I do for dinner tonight?",
+    },
+    {
+      id: "fact-option-cook-at-home",
+      kind: "fact",
+      label: "Cook at home",
+      detail: "Cheap and quick because ingredients are already here.",
+    },
+    {
+      id: "assumption-cost",
+      kind: "assumption",
+      label: "cost heuristic",
+      detail: "Cost score uses lightweight heuristics from the option details.",
+    },
+    {
+      id: "assumption-energy",
+      kind: "assumption",
+      label: "energy heuristic",
+      detail: "Energy score uses lightweight heuristics from the option details.",
+    },
+  ],
+  assessments: [
+    {
+      optionId: "cook-at-home",
+      score: 8.2,
+      fitBand: "high",
+      whyItFits: "Cook at home best fits when cost and energy matter most.",
+      whatCouldChange: "A different weight mix or stronger evidence could reorder this option.",
+      nextStep: "Stress-test this option against one concrete downside before deciding.",
+      evidenceRefs: ["fact-option-cook-at-home"],
+      assumptionRefs: ["assumption-cost", "assumption-energy"],
+    },
+  ],
+  visualGate: {
+    allowed: true,
+    reason: "Confirmed weights plus traceable score inputs allow a lightweight visual summary.",
+  },
 } as const;
 
 describe("simulationOutputSchema", () => {
@@ -46,56 +85,45 @@ describe("simulationOutputSchema", () => {
     expect(simulationOutputSchema.parse(validOutput)).toEqual(validOutput);
   });
 
-  it("trims nested strings and defaults warnings to an empty list", () => {
+  it("trims nested strings", () => {
     const parsed = simulationOutputSchema.parse({
       ...validOutput,
-      optionA: {
-        ...validOutput.optionA,
-        summary: "  Higher stability, lower flexibility.  ",
-        assumptions: [" Salary meets current living costs "],
-      },
-      comparison: {
-        ...validOutput.comparison,
-        suggestedNextStep: "  Validate salary realism and freelance pipeline before deciding  ",
-      },
-      warnings: undefined,
+      summary: "  Cook at home is the current best-fit choice for this daily decision.  ",
+      nextQuestions: ["  What new evidence would separate the top two options?  "],
     });
 
-    expect(parsed.optionA.summary).toBe("Higher stability, lower flexibility.");
-    expect(parsed.optionA.assumptions).toEqual(["Salary meets current living costs"]);
-    expect(parsed.comparison.suggestedNextStep).toBe(
-      "Validate salary realism and freelance pipeline before deciding",
-    );
-    expect(parsed.warnings).toEqual([]);
+    expect(parsed.summary).toBe("Cook at home is the current best-fit choice for this daily decision.");
+    expect(parsed.nextQuestions).toEqual(["What new evidence would separate the top two options?"]);
   });
 
   it("requires the full top-level shape", () => {
-    const missingComparison = {
+    const missingSummary = {
       ...validOutput,
-      comparison: undefined,
+      summary: undefined,
     };
 
-    expect(() => simulationOutputSchema.parse(missingComparison)).toThrow();
+    expect(() => simulationOutputSchema.parse(missingSummary)).toThrow();
   });
 
   it("rejects invalid enums", () => {
     expect(() =>
       simulationOutputSchema.parse({
         ...validOutput,
-        optionA: {
-          ...validOutput.optionA,
-          reversibility: "low",
-        },
+        runState: "queued",
       }),
     ).toThrow();
 
     expect(() =>
       simulationOutputSchema.parse({
         ...validOutput,
-        optionB: {
-          ...validOutput.optionB,
-          regretRisk: "easy",
-        },
+        provenance: [
+          {
+            id: "fact-question",
+            kind: "guess",
+            label: "User question",
+            detail: "Question",
+          },
+        ],
       }),
     ).toThrow();
   });
@@ -104,82 +132,107 @@ describe("simulationOutputSchema", () => {
     expect(() =>
       simulationOutputSchema.parse({
         ...validOutput,
-        comparison: {
-          ...validOutput.comparison,
-          biggestTradeoff: "   ",
-        },
+        summary: "   ",
       }),
     ).toThrow();
 
     expect(() =>
       simulationOutputSchema.parse({
         ...validOutput,
-        optionA: {
-          ...validOutput.optionA,
-          upside: ["   "],
+        warnings: ["   "],
+      }),
+    ).toThrow();
+  });
+
+  it("blocks recommendation summaries for blocked states", () => {
+    expect(() =>
+      simulationOutputSchema.parse({
+        ...validOutput,
+        runState: "refusal",
+        recommendationSummary: "Still do it",
+        visualGate: {
+          allowed: false,
+          reason: "Refusal blocks visuals.",
         },
       }),
     ).toThrow();
   });
 
-  it("rejects oversized scenario arrays and warning payload fields", () => {
+  it("requires confirmed weights for analysis-complete", () => {
     expect(() =>
       simulationOutputSchema.parse({
         ...validOutput,
-        optionA: {
-          ...validOutput.optionA,
-          assumptions: Array.from({ length: 11 }, (_, index) => `assumption-${index}`),
-        },
+        weightsConfirmed: false,
       }),
-    ).toThrow();
+    ).toThrow(/confirmed weights/i);
+  });
+
+  it("requires evidence and assumption refs to resolve to matching provenance kinds", () => {
+    expect(() =>
+      simulationOutputSchema.parse({
+        ...validOutput,
+        criteria: [
+          {
+            ...validOutput.criteria[0],
+            evidenceRefs: ["missing-ref"],
+          },
+        ],
+      }),
+    ).toThrow(/does not exist/i);
 
     expect(() =>
       simulationOutputSchema.parse({
         ...validOutput,
-        warnings: [
+        assessments: [
           {
-            code: "x".repeat(101),
-            message: "Too long warning code",
+            ...validOutput.assessments[0],
+            assumptionRefs: ["fact-question"],
+          },
+        ],
+      }),
+    ).toThrow(/invalid provenance kind/i);
+  });
+
+  it("blocks numeric scores while weights are unconfirmed", () => {
+    expect(() =>
+      simulationOutputSchema.parse({
+        ...validOutput,
+        runState: "awaiting-user-weights",
+        weightsConfirmed: false,
+        recommendationSummary: null,
+        visualGate: {
+          allowed: false,
+          reason: "Charts stay blocked until weights are confirmed.",
+        },
+        assessments: [
+          {
+            ...validOutput.assessments[0],
+            score: 8.2,
           },
         ],
       }),
     ).toThrow();
   });
 
-  it("requires likely advantages plus uncertainty details for each option", () => {
-    expect(() =>
-      simulationOutputSchema.parse({
-        ...validOutput,
-        optionA: {
-          ...validOutput.optionA,
-          confidenceNotes: [],
-        },
-      }),
-    ).toThrow();
-
-    expect(() =>
-      simulationOutputSchema.parse({
-        ...validOutput,
-        comparison: {
-          biggestTradeoff: validOutput.comparison.biggestTradeoff,
-          asymmetricRisk: validOutput.comparison.asymmetricRisk,
-          suggestedNextStep: validOutput.comparison.suggestedNextStep,
-        },
-      }),
-    ).toThrow();
-  });
-
-  it("accepts warning metadata when present", () => {
+  it("accepts blocked-state outputs when recommendation and visuals are withheld", () => {
     const parsed = simulationOutputSchema.parse({
       ...validOutput,
-      warnings: [
+      runState: "awaiting-user-weights",
+      recommendationSummary: null,
+      weightsConfirmed: false,
+      warnings: ["Weights are still provisional, so final ranking remains blocked."],
+      visualGate: {
+        allowed: false,
+        reason: "Charts stay blocked until weights are confirmed.",
+      },
+      assessments: [
         {
-          code: "thin_context",
-          message: "User context is thin, so conclusions should be treated cautiously.",
+          ...validOutput.assessments[0],
+          score: null,
         },
       ],
     });
 
-    expect(parsed.warnings).toHaveLength(1);
+    expect(parsed.runState).toBe("awaiting-user-weights");
   });
 });

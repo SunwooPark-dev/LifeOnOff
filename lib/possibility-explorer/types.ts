@@ -66,6 +66,9 @@ export interface PossibilityExplorerResult {
   whatToDoNow: string;
   uncertaintyNote: string;
   refusalReason: string | null;
+  weightsConfirmed: boolean;
+  warnings: string[];
+  nextQuestions: string[];
   criteria: Criterion[];
   provenance: ProvenanceRef[];
   assessments: OptionAssessment[];
