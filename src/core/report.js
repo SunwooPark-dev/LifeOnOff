@@ -88,10 +88,10 @@ function createWarnings(normalizedInput) {
   const warnings = [UNCERTAINTY_DISCLOSURE];
   const sensitiveKeywords = ['\uD22C\uC790', '\uC758\uB8CC', '\uBC95\uB960', '\uC815\uCE58'];
   if (SENSITIVE_DOMAINS.has(normalizedInput.scenario_domain)) {
-    warnings.unshift('\uBBFC\uAC10 \uB3C4\uBA54\uC778 \uC2DC\uB098\uB9AC\uC624\uC774\uBBC0\uB85C \uAC74\uAC15/\uC758\uB8CC \uD310\uB2E8\uC744 \uB300\uC2E0\uD558\uB294 \uC6A9\uB3C4\uB85C \uC0AC\uC6A9\uD558\uBA74 \uC548 \uB41C\uB2E4.');
+    warnings.unshift('?? ?????? ??? ?? ??? ?? ??? ???? ???? ??.');
   }
   if (normalizedInput.must_avoid.some((item) => sensitiveKeywords.some((keyword) => item.includes(keyword)))) {
-    warnings.unshift('must_avoid\uC5D0 \uBBFC\uAC10 \uD0A4\uC6CC\uB4DC\uAC00 \uD3EC\uD568\uB418\uC5B4 \uC788\uC5B4 \uACB0\uACFC\uB97C \uD655\uC815\uC801 \uC608\uCE21\uC774\uB098 \uC804\uBB38 \uC870\uC5B8\uCC98\uB7FC \uD574\uC11D\uD558\uBA74 \uC548 \uB41C\uB2E4.');
+    warnings.unshift('must_avoid ??? ?? ??? ???? ?? ??? ??? ????.');
   }
   return warnings;
 }
