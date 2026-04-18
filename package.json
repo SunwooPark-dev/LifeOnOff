@@ -11,7 +11,7 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:e2e": "playwright test",
-    "proof:weight-confirmation": "vitest run lib/possibility-explorer/authority-proof.test.ts lib/docs-truth.test.ts",
+    "proof:weight-confirmation": "vitest run lib/possibility-explorer/authority-proof.test.ts lib/docs-truth.test.ts app/page.weight-confirmation.integration.test.tsx",
     "proof:release": "node scripts/proof-release.mjs"
   },
   "dependencies": {

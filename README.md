@@ -4,15 +4,18 @@ Possibility Explorer Codex is a contract-first decision-support app for personal
 
 ## Current status
 
-This repository is still in early implementation. The PRD and test spec define a broader contract than the current code implements today.
+This repository now contains a working Possibility Explorer Codex workspace for the personal daily choice MVP. It is no longer a scaffold-only starter, but it is also not yet release-ready.
 
 Current repo reality:
-- input/output schema scaffolding exists in `lib/schemas/`
-- product and architecture docs exist under `docs/`
-- the UI is still a default Next.js starter screen
-- the app is **not** release-ready for the v1 PRD yet
+- `app/page.tsx` renders a real decision workspace for 2 to 5 options
+- request/result contracts are enforced through Zod-backed schema and workspace seams in `lib/schemas/` and `lib/possibility-explorer/`
+- ranked recommendations remain blocked until the user explicitly confirms weights
+- provenance-aware output, downgrade/refusal behavior, and visual gating are represented in the current contract
+- `pnpm lint`, `pnpm typecheck`, `CI=1 pnpm test`, and `pnpm build` are the currently verified baseline gates
+- a browser-based E2E release-proof lane now exists around `pnpm proof:release` plus `docs/release/weight-confirmation-proof-packet.md`
+- the latest local `pnpm proof:release` run refreshed the weight-confirmation proof packet, but the app is **not** release-ready yet because the broader release checklist still remains open
 
-See `docs/release/current-gap-review.md` for the documented gap review and `docs/release/readiness-checklist.md` for the release gate.
+See `docs/release/current-gap-review.md` for the documented gap review, `docs/release/readiness-checklist.md` for the release gate, and `docs/release/weight-confirmation-proof-packet.md` for the release-proof packet contract.
 
 ## Product guardrails
 
@@ -28,21 +31,24 @@ The v1 release candidate is intentionally narrow:
 ## Commands
 
 ```bash
-npm install
-npm run dev
-npm run lint
-npm run typecheck
-npm run test:run
-npm run build
+pnpm install
+pnpm dev
+pnpm lint
+pnpm typecheck
+CI=1 pnpm test
+pnpm build
+pnpm proof:release
 ```
 
 ## Repository map
 
 - `app/` — Next.js App Router UI
-- `lib/schemas/` — request/result schema scaffolding and tests
+- `lib/schemas/` — request/result schema contracts and tests
+- `lib/possibility-explorer/` — engine, workspace seam, visual gating, and input-draft helpers
 - `docs/product/` — product framing and MVP scope
 - `docs/architecture/` — contract and state-machine notes
 - `docs/release/` — readiness review, blockers, and verification expectations
+- `scripts/release-proof-packet.mjs` — deterministic release-proof packet renderer for the weight-confirmation lane
 
 ## Documentation index
 
@@ -50,9 +56,11 @@ npm run build
 - `docs/architecture/simulation-contract.md`
 - `docs/release/current-gap-review.md`
 - `docs/release/readiness-checklist.md`
+- `docs/release/weight-confirmation-proof-packet.md`
 
 ## Notes for implementers
 
 - Keep the PRD as the source of truth for release scope.
 - Treat simulation/world-model breadth as an internal seam, not a v1 product promise.
 - Prefer safe downgrade or refusal over fabricated certainty.
+- Do not overclaim release readiness until a fresh browser-E2E proof packet refresh and the remaining release gates are complete.
