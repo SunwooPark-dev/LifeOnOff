@@ -1,11 +1,27 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { createDefaultInput } from "../lib/possibility-explorer/engine";
-import { updateDraftOption, updateDraftQuestion } from "../lib/possibility-explorer/input-draft";
+import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  addDraftOption,
+  cloneDefaultInput,
+  removeDraftOption,
+  setDraftWeightsConfirmed,
+  updateDraftConstraints,
+  updateDraftOption,
+  updateDraftPreferredOutcomes,
+  updateDraftQuestion,
+  updateDraftWeight,
+} from "../lib/possibility-explorer/input-draft";
+import {
+  clearDraftResumeCheckpoint,
+  hasDraftResumeCheckpoint,
+  loadDraftResumeCheckpoint,
+  saveDraftResumeCheckpoint,
+  windowStorage,
+} from "../lib/possibility-explorer/draft-resume";
+import { buildAuthorityProofView } from "../lib/possibility-explorer/authority-proof";
 import type { PossibilityExplorerInput } from "../lib/possibility-explorer/types";
 import { canRenderVisualSummary, getVisualSummaryWidth } from "../lib/possibility-explorer/visual-gating";
-import { buildWorkspaceState } from "../lib/possibility-explorer/workspace";
 
 const styles = {
   page: {
@@ -160,52 +176,138 @@ const styles = {
   checkboxRow: { display: "flex", gap: 10, alignItems: "flex-start", marginTop: 10 },
 } as const;
 
-function cloneDefaults(): PossibilityExplorerInput {
-  const defaults = createDefaultInput();
-  return {
-    ...defaults,
-    criteriaWeights: { ...defaults.criteriaWeights },
-    options: defaults.options.map((option) => ({ ...option })),
-  };
+type ResumeRecoveryState = "fresh" | "restored-latest" | "restored-backup" | "discarded";
+
+function formatSavedAt(savedAt: string | null) {
+  if (!savedAt) {
+    return "";
+  }
+
+  const parsed = new Date(savedAt);
+  if (Number.isNaN(parsed.getTime())) {
+    return savedAt;
+  }
+
+  return parsed.toLocaleString();
+}
+
+function formatRelativeSavedAt(savedAt: string | null) {
+  if (!savedAt) {
+    return "";
+  }
+
+  const savedTime = new Date(savedAt).getTime();
+  if (Number.isNaN(savedTime)) {
+    return "saved recently";
+  }
+
+  const diffMs = Math.max(0, Date.now() - savedTime);
+  const diffMinutes = Math.floor(diffMs / 60000);
+
+  if (diffMinutes < 1) {
+    return "just now";
+  }
+
+  if (diffMinutes < 60) {
+    return `${diffMinutes}m ago`;
+  }
+
+  const diffHours = Math.floor(diffMinutes / 60);
+  if (diffHours < 24) {
+    return `${diffHours}h ago`;
+  }
+
+  const diffDays = Math.floor(diffHours / 24);
+  return `${diffDays}d ago`;
+}
+
+function getResumeStatusCopy(state: ResumeRecoveryState, hasSavedDraft: boolean) {
+  switch (state) {
+    case "restored-backup":
+      return "Picked up your draft from a backup autosave because the latest checkpoint was unavailable.";
+    case "restored-latest":
+      return "Picked up your saved draft from the latest autosave.";
+    case "discarded":
+      return "Cleared the saved draft history and restarted from the default example.";
+    default:
+      return hasSavedDraft ? "Autosave is actively protecting the current draft on this device." : "Autosave will start after your first draft change on this device.";
+  }
 }
 
 export default function Home() {
-  const [input, setInput] = useState<PossibilityExplorerInput>(() => cloneDefaults());
-  const workspace = useMemo(() => buildWorkspaceState(input), [input]);
+  const [input, setInput] = useState<PossibilityExplorerInput>(() => cloneDefaultInput());
+  const [resumeRecoveryState, setResumeRecoveryState] = useState<ResumeRecoveryState>("fresh");
+  const [lastSavedAt, setLastSavedAt] = useState<string | null>(null);
+  const [hasSavedDraft, setHasSavedDraft] = useState(false);
+  const storageReadyRef = useRef(false);
+  const authorityView = useMemo(() => buildAuthorityProofView(input), [input]);
+  const workspace = authorityView.workspace;
   const result = workspace.result;
 
+  const commitDraft = (
+    nextInput: PossibilityExplorerInput,
+    nextResumeRecoveryState?: ResumeRecoveryState,
+  ) => {
+    setInput(nextInput);
+
+    if (nextResumeRecoveryState) {
+      setResumeRecoveryState(nextResumeRecoveryState);
+    }
+
+    if (!storageReadyRef.current) {
+      return;
+    }
+
+    const checkpoint = saveDraftResumeCheckpoint(windowStorage, nextInput);
+    setLastSavedAt(checkpoint.savedAt);
+    setHasSavedDraft(true);
+  };
+
+  useEffect(() => {
+    const restored = loadDraftResumeCheckpoint(windowStorage);
+
+    if (restored.status !== "empty") {
+      storageReadyRef.current = true;
+      queueMicrotask(() => {
+        setInput(restored.input);
+        setResumeRecoveryState(restored.status);
+        setLastSavedAt(restored.savedAt);
+        setHasSavedDraft(true);
+      });
+
+      return;
+    }
+
+    storageReadyRef.current = true;
+    queueMicrotask(() => {
+      setHasSavedDraft(hasDraftResumeCheckpoint(windowStorage));
+    });
+  }, []);
+
   const updateOption = (index: number, key: "label" | "details", value: string) => {
-    setInput((current) => updateDraftOption(current, index, key, value));
+    commitDraft(updateDraftOption(input, index, key, value));
   };
 
   const addOption = () => {
-    setInput((current) => {
-      if (current.options.length >= 5) return current;
-      return {
-        ...current,
-        options: [...current.options, { id: `option-${current.options.length + 1}`, label: "", details: "" }],
-        weightsConfirmed: false,
-      };
-    });
+    commitDraft(addDraftOption(input));
   };
 
   const removeOption = (index: number) => {
-    setInput((current) => {
-      if (current.options.length <= 2) return current;
-      return {
-        ...current,
-        options: current.options.filter((_, optionIndex) => optionIndex !== index),
-        weightsConfirmed: false,
-      };
-    });
+    commitDraft(removeDraftOption(input, index));
   };
 
   const updateWeight = (criterionId: string, value: number) => {
-    setInput((current) => ({
-      ...current,
-      criteriaWeights: { ...current.criteriaWeights, [criterionId]: value },
-      weightsConfirmed: false,
-    }));
+    commitDraft(updateDraftWeight(input, criterionId, value));
+  };
+
+  const discardSavedDraft = () => {
+    const nextInput = cloneDefaultInput();
+    clearDraftResumeCheckpoint(windowStorage);
+    storageReadyRef.current = true;
+    setInput(nextInput);
+    setResumeRecoveryState("discarded");
+    setLastSavedAt(null);
+    setHasSavedDraft(false);
   };
 
   return (
@@ -223,9 +325,35 @@ export default function Home() {
         <div style={styles.layout}>
           <section style={styles.panel}>
             <h2 style={styles.sectionTitle}>Decision workspace</h2>
+            <div style={styles.statusCard} data-testid="draft-resume-status">
+              <h3 style={{ margin: "0 0 8px", fontSize: 16 }}>Draft recovery</h3>
+              <p style={styles.statusText}>
+                {getResumeStatusCopy(resumeRecoveryState, hasSavedDraft)}
+              </p>
+              {lastSavedAt ? (
+                <p style={styles.miniText}>
+                  Saved checkpoint:{" "}
+                  <time data-testid="draft-resume-saved-at" dateTime={lastSavedAt}>
+                    {formatRelativeSavedAt(lastSavedAt)} · {formatSavedAt(lastSavedAt)}
+                  </time>
+                </p>
+              ) : null}
+              {hasSavedDraft ? (
+                <div style={{ ...styles.buttonRow, marginTop: 12 }}>
+                  <button type="button" style={styles.subtleButton} onClick={discardSavedDraft}>
+                    Discard saved draft
+                  </button>
+                </div>
+              ) : null}
+            </div>
             <div style={styles.field}>
               <label style={styles.label}>Question</label>
-              <textarea style={styles.textarea} value={input.question} onChange={(event) => setInput((current) => updateDraftQuestion(current, event.target.value))} />
+              <textarea
+                data-testid="question-textarea"
+                style={styles.textarea}
+                value={input.question}
+                onChange={(event) => commitDraft(updateDraftQuestion(input, event.target.value))}
+              />
             </div>
             <div style={styles.gridTwo}>
               <div style={styles.field}>
@@ -233,7 +361,7 @@ export default function Home() {
                 <textarea
                   style={styles.textarea}
                   value={input.preferredOutcomes}
-                  onChange={(event) => setInput((current) => ({ ...current, preferredOutcomes: event.target.value, weightsConfirmed: false }))}
+                  onChange={(event) => commitDraft(updateDraftPreferredOutcomes(input, event.target.value))}
                 />
               </div>
               <div style={styles.field}>
@@ -241,7 +369,7 @@ export default function Home() {
                 <textarea
                   style={styles.textarea}
                   value={input.constraints}
-                  onChange={(event) => setInput((current) => ({ ...current, constraints: event.target.value, weightsConfirmed: false }))}
+                  onChange={(event) => commitDraft(updateDraftConstraints(input, event.target.value))}
                 />
               </div>
             </div>
@@ -272,17 +400,21 @@ export default function Home() {
               <button type="button" style={styles.secondaryButton} onClick={addOption} disabled={input.options.length >= 5}>
                 Add option
               </button>
-              <button type="button" style={styles.subtleButton} onClick={() => setInput(cloneDefaults())}>
-                Reset example
+              <button type="button" style={styles.subtleButton} onClick={() => commitDraft(cloneDefaultInput())}>
+                Reset current draft
               </button>
             </div>
           </section>
 
           <section style={styles.panel}>
             <div style={styles.statusCard}>
-              <h2 style={styles.statusTitle}>{result.statusTitle}</h2>
+              <h2 style={styles.statusTitle} data-testid="status-title">{result.statusTitle}</h2>
               <p style={styles.statusText}>{result.summary}</p>
-              {result.recommendationSummary ? <p style={{ ...styles.miniText, marginTop: 10 }}>Recommendation: {result.recommendationSummary}</p> : null}
+              {authorityView.recommendationVisible ? (
+                <p style={{ ...styles.miniText, marginTop: 10 }} data-testid="recommendation-summary">
+                  Recommendation: {result.recommendationSummary}
+                </p>
+              ) : null}
               {result.refusalReason ? <p style={{ ...styles.miniText, marginTop: 10 }}>Boundary: {result.refusalReason}</p> : null}
               {workspace.inputWarnings.length ? (
                 <ul style={{ ...styles.list, marginTop: 10 }}>
@@ -305,7 +437,7 @@ export default function Home() {
                   ))}
                 </ul>
               ) : null}
-              <p style={{ ...styles.miniText, marginTop: 10 }}>
+              <p style={{ ...styles.miniText, marginTop: 10 }} data-testid="workspace-state">
                 State: <strong>{result.runState}</strong> · Validation: <strong>{workspace.validationState}</strong> · Visual gate: <strong>{result.visualGate.allowed ? "open" : "blocked"}</strong>
               </p>
             </div>
@@ -324,6 +456,7 @@ export default function Home() {
                     step={5}
                     value={input.criteriaWeights[criterion.id] ?? criterion.weight}
                     style={styles.slider}
+                    data-testid={`weight-slider-${criterion.id}`}
                     onChange={(event) => updateWeight(criterion.id, Number(event.target.value))}
                   />
                 </div>
@@ -337,7 +470,8 @@ export default function Home() {
               <input
                 type="checkbox"
                 checked={input.weightsConfirmed}
-                onChange={(event) => setInput((current) => ({ ...current, weightsConfirmed: event.target.checked }))}
+                data-testid="weights-confirmation-checkbox"
+                onChange={(event) => commitDraft(setDraftWeightsConfirmed(input, event.target.checked))}
               />
               <span style={styles.miniText}>
                 I confirm these weights reflect what matters most right now. Until this is checked, the app will not show a final ranked recommendation.
@@ -371,7 +505,7 @@ export default function Home() {
                     Traceability → evidence: {assessment.evidenceRefs.join(", ")} · assumptions: {assessment.assumptionRefs.join(", ")}
                   </p>
                   {canRenderVisualSummary(result, assessment) ? (
-                    <div style={styles.visualCard}>
+                    <div style={styles.visualCard} data-testid={`visual-summary-${assessment.optionId}`}>
                       <strong>Visual summary</strong>
                       <div style={styles.barTrack}>
                         <div style={{ ...styles.barFill, width: getVisualSummaryWidth(numericScore) }} />
