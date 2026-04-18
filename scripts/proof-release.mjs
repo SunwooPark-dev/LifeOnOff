@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import { spawnSync } from "node:child_process";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync, rmSync } from "node:fs";
 import net from "node:net";
+import { join } from "node:path";
 
 const HOST = "127.0.0.1";
 const PORT = Number(process.env.PLAYWRIGHT_PORT ?? "3101");
@@ -10,6 +11,7 @@ const REQUIRED_ARTIFACTS = [
   "playwright-report/index.html",
   "test-results/weight-confirmation/results.json",
 ];
+const NEXT_DEV_LOCK_PATH = join(".next", "dev", "lock");
 
 function isPortAvailable(host, port) {
   return new Promise((resolve) => {
@@ -39,6 +41,38 @@ function run(command, args, env = process.env) {
   if (result.status !== 0) {
     throw new Error(`${command} ${args.join(" ")} failed with status ${result.status ?? "unknown"}`);
   }
+}
+
+function isProcessAlive(pid) {
+  if (!Number.isInteger(pid) || pid <= 0) {
+    return false;
+  }
+
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function clearStaleNextDevLock() {
+  if (!existsSync(NEXT_DEV_LOCK_PATH)) {
+    return;
+  }
+
+  try {
+    const lock = JSON.parse(readFileSync(NEXT_DEV_LOCK_PATH, "utf8"));
+
+    if (isProcessAlive(lock.pid)) {
+      return;
+    }
+  } catch {
+    // Best-effort cleanup: if the lock is unreadable, remove it and let the next
+    // build establish the correct state again.
+  }
+
+  rmSync(NEXT_DEV_LOCK_PATH, { force: true });
 }
 
 function writePacket({ status, note, observedArtifacts = [] }) {
@@ -79,6 +113,7 @@ if (!available) {
 }
 
 try {
+  clearStaleNextDevLock();
   run(PNPM_COMMAND, ["build"]);
 
   run(

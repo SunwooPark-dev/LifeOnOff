@@ -11,7 +11,7 @@
 
 ## Packet status
 - Status: `verified-browser-e2e`
-- Generated at: `2026-04-18T07:31:53.145Z`
+- Generated at: `2026-04-18T07:37:38.714Z`
 - Fresh built-app browser-E2E proof completed successfully for this commit.
 
 ## Required volatile artifacts
