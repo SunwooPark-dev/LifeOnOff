@@ -18,13 +18,6 @@ function appendChildren(parent, ...children) {
   return parent;
 }
 
-function createTextList(doc, items, emptyText = '\uD45C\uC2DC\uD560 \uD56D\uBAA9\uC774 \uC5C6\uC2B5\uB2C8\uB2E4.') {
-  const list = createElement(doc, 'ul');
-  const values = items.length ? items : [emptyText];
-  values.forEach((item) => list.appendChild(createElement(doc, 'li', { text: item })));
-  return list;
-}
-
 function renderScoreTable(doc, scorecards) {
   const table = createElement(doc, 'table');
   const thead = createElement(doc, 'thead');
@@ -123,25 +116,10 @@ export function createResultsFragment(report, mergedMarkdown, doc = document) {
   ]);
   fragment.appendChild(topline);
 
-  const noticeGrid = createElement(doc, 'div', { className: 'card-grid' });
-  noticeGrid.appendChild(createSection(
-    doc,
-    '\uAC00\uB4DC\uB808\uC77C',
-    [createTextList(doc, report.humanReport.warnings, '\uCD94\uAC00 \uAC00\uB4DC\uB808\uC77C \uC5C6\uC74C')],
-    'metric-card'
-  ));
-  noticeGrid.appendChild(createSection(
-    doc,
-    '\uC785\uB825 \uAC00\uC815',
-    [createTextList(doc, report.humanReport.assumptions, '\uCD94\uAC00 \uAC00\uC815 \uC5C6\uC74C')],
-    'metric-card'
-  ));
-  fragment.appendChild(createSection(doc, '\uAC00\uC815 \uBC0F \uAC00\uB4DC\uB808\uC77C', [noticeGrid]));
-
-  fragment.appendChild(createSection(doc, '\uD575\uC2EC \uBE44\uAD50 \uD3EC\uC778\uD2B8', [
-    createTextList(doc, report.humanReport.comparative_summary, '\uBE44\uAD50 \uD3EC\uC778\uD2B8\uAC00 \uCDA9\uBD84\uD558\uC9C0 \uC54A\uC544 \uC6B0\uC120\uC21C\uC704 \uC7AC\uC124\uC815\uC774 \uD544\uC694\uD558\uB2E4.')
-  ]));
-  fragment.appendChild(createSection(doc, '\uCC28\uC6D0\uBCC4 \uC810\uC218 \uBE44\uAD50\uD45C', [renderScoreTable(doc, report.humanReport.branch_matrix)]));
+  const list = createElement(doc, 'ul');
+  report.humanReport.comparative_summary.forEach((item) => list.appendChild(createElement(doc, 'li', { text: item })));
+  fragment.appendChild(createSection(doc, '핵심 비교 포인트', [list]));
+  fragment.appendChild(createSection(doc, '차원별 점수 비교표', [renderScoreTable(doc, report.humanReport.branch_matrix)]));
 
   const twoColumn = createElement(doc, 'section', { className: 'result-block two-column' });
   twoColumn.appendChild(createSection(doc, '주요 분기점 타임라인', [renderTimeline(doc, report.humanReport.key_timeline)], '')); 
@@ -161,4 +139,4 @@ export function createResultsFragment(report, mergedMarkdown, doc = document) {
 
 export function mountResults(root, report, mergedMarkdown, doc = document) {
   root.replaceChildren(createResultsFragment(report, mergedMarkdown, doc));
-}
+}
